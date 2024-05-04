@@ -1,3 +1,26 @@
 {
-    "assssss": "assssssdd"
+    "triggers": [
+        "стоп",
+        "продолжить",
+        "пауза",
+        "погромче",
+        "потише"
+    ],
+    "actions": {
+        "стоп": {
+            "command": "Audio.play()"
+        },
+        "продолжить": {
+            "command": "Audio.play()"
+        },
+        "пауза": {
+            "command": "Audio.play()"
+        },
+        "погромче": {
+            "command": "Audio.volumeup()"
+        },
+        "потише": {
+            "command": "Audio.volumedown()"
+        }
+    }
 }

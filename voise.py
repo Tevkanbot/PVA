@@ -10,7 +10,7 @@ class Voise:
                 sr.pause_threshold = 0.5
 
                 sr.adjust_for_ambient_noise(source=mic, duration=0.2)
-
+                print("<<<<<>>>>>")
                 audio = sr.listen(source=mic)
                 query = sr.recognize_google(audio_data=audio, language="ru-RU").lower()
 
