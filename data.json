@@ -1,3 +1,43 @@
 {
-    "assssss": "assssssdd"
+    "OneWordTriggers": [
+        "стоп",
+        "продолжить",
+        "пауза",
+        "погромче",
+        "потише"
+    ],
+    "TwoWordsTriggers": [
+        "открой браузер",
+        "закрой браузер",
+        "сверни окна"
+
+    ],
+    "OneWordActions": {
+        "стоп": {
+            "command": "Audio.play()"
+        },
+        "продолжить": {
+            "command": "Audio.play()"
+        },
+        "пауза": {
+            "command": "Audio.play()"
+        },
+        "погромче": {
+            "command": "Audio.volumeup()"
+        },
+        "потише": {
+            "command": "Audio.volumedown()"
+        }
+    },
+    "TwoWordsActions": {
+        "открой браузер": {
+            "command": "Apps.browser.open()"
+        },
+        "закрой браузер": {
+            "command": "Apps.browser.close()"
+        },
+        "сверни окна": {
+            "command": "Desktop.clear()"
+        }
+    }
 }

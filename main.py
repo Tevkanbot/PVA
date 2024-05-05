@@ -1,12 +1,21 @@
 from voise import Voise
 from data import Data
-from commands import Audio, Desktop
-import time
-while True:
-    voise = Voise()
-    query = voise.get_phrase()
-    print(query)
-    desktop = Desktop()
-    if query =="Закрой все окна":
-        desktop.clear()
-        print("srtthsrth")
+from commands import Audio
+from triggers import Trigger
+import os
+def main():
+    #trig = Trigger(name = "гена")
+
+    while True:
+        phrase = Voise.get_phrase()
+        print(phrase)
+
+        if Trigger.search_trigger(phrase)["WordCount"] != 0:
+            Trigger.work(Trigger.search_trigger(phrase)["WordCount"], Trigger.search_trigger(phrase)["trigger"])
+
+
+
+
+if __name__ == "__main__":
+    main()
+
