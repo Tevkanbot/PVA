@@ -1,12 +1,16 @@
 {
-    "triggers": [
+    "OneWordTriggers": [
         "стоп",
         "продолжить",
         "пауза",
         "погромче",
         "потише"
     ],
-    "actions": {
+    "TwoWordsTriggers": [
+        "открой браузер",
+        "закрой браузер"
+    ],
+    "OneWordActions": {
         "стоп": {
             "command": "Audio.play()"
         },
@@ -21,6 +25,14 @@
         },
         "потише": {
             "command": "Audio.volumedown()"
+        }
+    },
+    "TwoWordsActions": {
+        "открой браузер": {
+            "command": "Apps.browser.open()"
+        },
+        "закрой браузер": {
+            "command": "Apps.browser.close()"
         }
     }
 }

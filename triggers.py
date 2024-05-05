@@ -1,5 +1,5 @@
 from data import Data
-from commands import Audio
+from commands import Audio, Apps
 
 class Trigger:
     def __init__(self, name):
@@ -13,8 +13,9 @@ class Trigger:
 
         for word in phrase:
             if word == "гена":
-                print("Активатор обнаружен \n")
+                print("ГЕНА обнаружен \n")
                 start = True
+                break
 
 
         if start == True: # Если активатор найден, то ищем тригеры во фразе
@@ -22,27 +23,56 @@ class Trigger:
 
             data = Data.load() # Загружаем данные, в особенности тригерные слова
 
-            #print(phrase)
-            #print(data["triggers"])
+#-------------------------------------------------------------------------------------------------------------- Снача ищем двуСловные тригеры
+            twoWordsTriggers = data["TwoWordsTriggers"]
+            #print(twoWordsTriggers)
+
+            for TWTList in twoWordsTriggers: # Перебираем все двуСловные тригеры
+
+                TWTList = TWTList.split() # Превращаем двуСловный тригер в список
+                #print (TWTList)
+                for trigWord in TWTList: # Перебираем все тригеры(слова) из двуСловного тригера
+
+                    for word in phrase: # Перебираем все слова в фразе
+
+                        if trigWord == word: # Если нашли совпадение
+
+
+                            print("Первый из 2 тригеров найден!")
+                            copy = TWTList.copy()
+
+                            TWTList.remove(trigWord)
+                            remainWord = TWTList.pop(0)
+                            for word in phrase:
+                                if word == remainWord:
+                                    print("Второй из 2 тригеров найден----", copy)
+                                    return {"WordCount": 2, "trigger": " ".join(copy)}
+
+                                                                                                                
+
+                            
+#-------------------------------------------------------------------------------------------------------------- Потом одноСловные тригеры
 
             for word in phrase:
-                for trigger in data["triggers"]:
+                for trigger in data["OneWordTriggers"]:
                     if trigger == word:
-                        return word
-            return False
-        
-
+                        return {"WordCount": 1, "trigger": word}
+            return {"WordCount": 0}
         
         else:
-            return False
+            return {"WordCount": 0}
                                 
-    def work(trigWord):
+    def work(wordsCount, trigWord):
+
+    
         data = Data.load()
-        #print(data["actions"][trigWord]["command"])
 
-        exec(data["actions"][trigWord]["command"])
+        if wordsCount == 1:
+            exec(data["OneWordActions"][trigWord]["command"])
 
-        print("я запустиль:", trigWord, ">>>", data["actions"][trigWord]["command"])
-                 
+            print("я запустиль:", trigWord, ">>>", data["OneWordActions"][trigWord]["command"])
 
-                                    
+        if wordsCount == 2:
+            exec(data["TwoWordsActions"][trigWord]["command"])
+
+            print("я запустиль:", trigWord, ">>>", data["TwoWordsActions"][trigWord]["command"])
