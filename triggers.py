@@ -41,10 +41,14 @@ class Trigger:
                             print("Первый из 2 тригеров найден!")
                             copy = TWTList.copy()
 
+                            #TWTList.remove(trigWord)
+                            
                             TWTList.remove(trigWord)
+                            
                             remainWord = TWTList.pop(0)
+
                             for word in phrase:
-                                if word == remainWord:
+                                if word == remainWord: #TWTList.pop(0)
                                     print("Второй из 2 тригеров найден----", copy)
                                     return {"WordCount": 2, "trigger": " ".join(copy)}
 
