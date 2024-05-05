@@ -4,6 +4,9 @@ from commands import Audio
 from triggers import Trigger
 
 def main():
+
+    #trig = Trigger(name = "гена")
+
     while True:
         phrase = Voise.get_phrase()
         print(phrase)
