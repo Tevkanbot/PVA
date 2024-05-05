@@ -2,7 +2,7 @@ import speech_recognition
 #import pyaudio
 
 class Voise:
-    def get_phrase(): # Получает разделённый на фразы голос, если не нашли то возвращает "NOTEXT"
+    def get_phrase(self): # Получает разделённый на фразы голос, если не нашли то возвращает "NOTEXT"
         try:
             with speech_recognition.Microphone() as mic:
 

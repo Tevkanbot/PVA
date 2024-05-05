@@ -16,6 +16,13 @@ class Audio:
 
     def mute():
         pyautogui.press('volumemute')
+
+
+
+class Desktop:
+    def clear(self):
+        pyautogui.hotkey('win','m')
+
                 
 
                 
