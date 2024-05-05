@@ -1,9 +1,9 @@
 from data import Data
-from commands import Audio, Apps
+from commands import Audio, Apps, Desktop
 
 class Trigger:
-    def __init__(self, name):
-        self.name = name.lower()
+    def __init__(s, name):
+        s.name = name.lower()
                 
     def search_trigger(phrase): #ищем снала анктивационное слово, затем тригеры во фразе
         
@@ -23,7 +23,7 @@ class Trigger:
 
             data = Data.load() # Загружаем данные, в особенности тригерные слова
 
-#-------------------------------------------------------------------------------------------------------------- Снача ищем двуСловные тригеры
+#----------------- Снача ищем двуСловные тригеры--------------------------------------------------------------------
             twoWordsTriggers = data["TwoWordsTriggers"]
             #print(twoWordsTriggers)
 
@@ -55,7 +55,7 @@ class Trigger:
                                                                                                                 
 
                             
-#-------------------------------------------------------------------------------------------------------------- Потом одноСловные тригеры
+#----------------Потом одноСловные тригеры---------------------------------------------------------
 
             for word in phrase:
                 for trigger in data["OneWordTriggers"]:
