@@ -33,13 +33,13 @@ class Apps:               #работа с браузером
             os.system("taskkill /f /im browser.exe")
             os.system("taskkill /f /im chrome.exe")
 
-    class powerpoint:
+    class powerpoint:    # открытие преложений
         
         def open():
-            os.startfile("")
+            os.startfile("POWERPNT.EXE")
 
         def close():
-            os.system("")
+            os.system("taskkill /f /im POWERPNT.EXE")
                                 
 
 

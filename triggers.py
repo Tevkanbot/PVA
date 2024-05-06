@@ -14,8 +14,8 @@ class Trigger:
         forReturn = {}
 
         for word in phrase:
-            if word == "гена":
-                print("ГЕНА обнаружен \n")
+            if word == "клей":
+                print("КЛЕЙ обнаружен \n")
                 start = True
                 break
 
