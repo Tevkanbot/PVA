@@ -11,6 +11,8 @@ class Trigger:
         
         start = False
 
+        forReturn = {}
+
         for word in phrase:
             if word == "гена":
                 print("ГЕНА обнаружен \n")
@@ -50,7 +52,7 @@ class Trigger:
                             for word in phrase:
                                 if word == remainWord: #TWTList.pop(0)
                                     print("Второй из 2 тригеров найден----", copy)
-                                    return {"WordCount": 2, "trigger": " ".join(copy)}
+                                    forReturn =  {"WordCount": 2, "trigger": " ".join(copy)}
 
                                                                                                                 
 
@@ -60,9 +62,19 @@ class Trigger:
             for word in phrase:
                 for trigger in data["OneWordTriggers"]:
                     if trigger == word:
-                        return {"WordCount": 1, "trigger": word}
-            return {"WordCount": 0}
-        
+                        forReturn =   {"WordCount": 1, "trigger": word}
+            if forReturn != {"WordCount": 1, "trigger": word}:
+                forReturn =  {"WordCount": 0}
+            
+#----------------Нужно ли искать число? Если да то ищем---------------------------------------------------------            
+            
+
+
+
+
+
+
+            return forReturn
         else:
             return {"WordCount": 0}
                                 

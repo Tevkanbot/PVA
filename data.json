@@ -9,8 +9,9 @@
     "TwoWordsTriggers": [
         "открой браузер",
         "закрой браузер",
+        "открой powerpoint",
+        "закрой powerpoint",
         "сверни окна"
-
     ],
     "OneWordActions": {
         "стоп": {
@@ -38,6 +39,14 @@
         },
         "сверни окна": {
             "command": "Desktop.clear()"
+        },
+        "открой powerpoint": {
+            "command": "Apps.powerpoint.open()"
+        },
+        "закрой powerpoint": {
+            "command": "Apps.powerpoint.close()"
+        
         }
     }
+
 }

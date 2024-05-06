@@ -27,11 +27,20 @@ class Audio:               #Работа со звуком
 class Apps:               #работа с браузером
     class browser:
         def open():
-            os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+            os.startfile("C:\\Users\\User\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe") #C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
 
         def close():
             os.system("taskkill /f /im browser.exe")
             os.system("taskkill /f /im chrome.exe")
+
+    class powerpoint:
+        
+        def open():
+            os.startfile("")
+
+        def close():
+            os.system("")
+                                
 
 
 
