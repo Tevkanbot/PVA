@@ -53,6 +53,17 @@ class Trigger:
                                 if word == remainWord: #TWTList.pop(0)
                                     print("Второй из 2 тригеров найден----", copy)
                                     forReturn =  {"WordCount": 2, "trigger": " ".join(copy)}
+                                    break
+
+
+                        if forReturn["WordCount"] != 0:# КОСТЫЛЬ ЛЮТЫЙ ПРОСТО, не расстреливайте за такое прошу...
+                            break
+                    if forReturn["WordCount"] != 0:# КОСТЫЛЬ ЛЮТЫЙ ПРОСТО, не расстреливайте за такое прошу...
+                        break
+                if forReturn["WordCount"] != 0:# КОСТЫЛЬ ЛЮТЫЙ ПРОСТО, не расстреливайте за такое прошу...
+                    break
+
+                
 
                                                                                                                 
 
@@ -63,11 +74,15 @@ class Trigger:
                 for trigger in data["OneWordTriggers"]:
                     if trigger == word:
                         forReturn =   {"WordCount": 1, "trigger": word}
+                        break
+
             if forReturn != {"WordCount": 1, "trigger": word}:
                 forReturn =  {"WordCount": 0}
             
 #----------------Нужно ли искать число? Если да то ищем---------------------------------------------------------            
-            
+            #data = Data.load()
+            #if forReturn["WordCount"] == 1:
+                #if data["OneWordActions"][trigger] == True:
 
 
 
