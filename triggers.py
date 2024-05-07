@@ -1,9 +1,8 @@
+from typing import Any
 from data import Data
 from commands import Audio, Apps, Desktop
 
 class Trigger:
-    def __init__(s, name):
-        s.name = name.lower()
                 
     def search_trigger(phrase): #ищем снала анктивационное слово, затем тригеры во фразе
         
@@ -11,11 +10,9 @@ class Trigger:
         
         start = False
 
-        forReturn = {}
-
         for word in phrase:
-            if word == "гена":
-                print("ГЕНА обнаружен \n")
+            if word == "клей":
+                print("КЛЕЙ обнаружен \n")
                 start = True
                 break
 
@@ -52,7 +49,11 @@ class Trigger:
                             for word in phrase:
                                 if word == remainWord: #TWTList.pop(0)
                                     print("Второй из 2 тригеров найден----", copy)
-                                    forReturn =  {"WordCount": 2, "trigger": " ".join(copy)}
+                                    num = False
+                                    if data["TwoWordsActions"][" ".join(copy)]["num"] :
+                                        num = True
+                                    return {"WordCount": 2, "trigger": " ".join(copy), "num": num}
+                
 
                                                                                                                 
 
@@ -62,33 +63,56 @@ class Trigger:
             for word in phrase:
                 for trigger in data["OneWordTriggers"]:
                     if trigger == word:
-                        forReturn =   {"WordCount": 1, "trigger": word}
-            if forReturn != {"WordCount": 1, "trigger": word}:
-                forReturn =  {"WordCount": 0}
-            
-#----------------Нужно ли искать число? Если да то ищем---------------------------------------------------------            
+                        return {"WordCount": 1, "trigger": word, "num": num}
+                        
             
 
-
-
-
-
-
-            return forReturn
         else:
             return {"WordCount": 0}
                                 
-    def work(wordsCount, trigWord):
+
+        
+
+    def search_number(fromSearch, phrase):
+        
+        num = False
+
+        if fromSearch["WordCount"] != 0:
+            if fromSearch["num"] == True:
+                for item in phrase:
+                    try:
+                        num =  int(item)
+                        break
+
+                    except ValueError:
+                        pass
+                fromSearch["num"] = num
+
+        
+        
+                return fromSearch
+
+                        
+                        
+
+        else:
+            return False
+
+
+
+    def work(fromReturn):
 
     
         data = Data.load()
 
-        if wordsCount == 1:
+        trigWord = fromReturn["trigger"]
+        num = fromReturn["num"]
+        if fromReturn["WordCount"] == 1:
             exec(data["OneWordActions"][trigWord]["command"])
 
             print("я запустиль:", trigWord, ">>>", data["OneWordActions"][trigWord]["command"])
 
-        if wordsCount == 2:
+        if fromReturn["WordCount"] == 2:
             exec(data["TwoWordsActions"][trigWord]["command"])
 
             print("я запустиль:", trigWord, ">>>", data["TwoWordsActions"][trigWord]["command"])

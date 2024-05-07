@@ -15,37 +15,47 @@
     ],
     "OneWordActions": {
         "стоп": {
-            "command": "Audio.play()"
+            "command": "Audio.play(num)",
+            "num": false
         },
         "продолжить": {
-            "command": "Audio.play()"
+            "command": "Audio.play(num)",
+            "num": false
         },
         "пауза": {
-            "command": "Audio.play()"
+            "command": "Audio.play(num)",
+            "num": false
         },
         "погромче": {
-            "command": "Audio.volumeup()"
+            "command": "Audio.volumeup(num)",
+            "num": true
         },
         "потише": {
-            "command": "Audio.volumedown()"
+            "command": "Audio.volumedown(num)",
+            "num": true
         }
     },
     "TwoWordsActions": {
         "открой браузер": {
-            "command": "Apps.browser.open()"
+            "command": "Apps.browser.open(num)",
+            "num": false
+
         },
         "закрой браузер": {
-            "command": "Apps.browser.close()"
+            "command": "Apps.browser.close(num)",
+            "num": false
         },
         "сверни окна": {
-            "command": "Desktop.clear()"
+            "command": "Desktop.clear(num)",
+            "num": false
         },
         "открой powerpoint": {
-            "command": "Apps.powerpoint.open()"
+            "command": "Apps.powerpoint.open(num)",
+            "num": false
         },
         "закрой powerpoint": {
-            "command": "Apps.powerpoint.close()"
-        
+            "command": "Apps.powerpoint.close(num)",
+            "num": false
         }
     }
 
