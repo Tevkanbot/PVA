@@ -7,8 +7,10 @@ class Audio:  # Работа со звуком
 
     pyautogui.FAILSAFE = True
 
-    def volumeup(level):  # Volume up
-        for i in range(5):
+
+    def volumeup(level): # Volume up
+        for i in range(level):
+          
             pyautogui.press('volumeup')
             # time.sleep(1)
 

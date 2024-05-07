@@ -11,11 +11,13 @@ def main():
     while True:
         phrase = Voise.get_phrase()
         print(phrase)
+        tr = Trigger.search_trigger
+        res = Trigger.search_number(tr, phrase)
 
-        if Trigger.search_trigger(phrase)["WordCount"] != 0:
+        if res != 0:
 
-            Trigger.work(Trigger.search_trigger(phrase)["WordCount"], Trigger.search_trigger(phrase)["trigger"])
-        
+            Trigger.work(res)
+
             
 
 if __name__ == "__main__":
