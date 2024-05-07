@@ -17,8 +17,10 @@ def main():
         if res != 0:
 
             Trigger.work(res)
+
             
 
 if __name__ == "__main__":
     main()
+
 
