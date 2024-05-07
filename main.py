@@ -15,7 +15,7 @@ def main():
         if Trigger.search_trigger(phrase)["WordCount"] != 0:
 
             Trigger.work(Trigger.search_trigger(phrase)["WordCount"], Trigger.search_trigger(phrase)["trigger"])
-        print("hih")
+        
             
 
 if __name__ == "__main__":
