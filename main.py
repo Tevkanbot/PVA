@@ -21,8 +21,10 @@ def main():
         
         if res["WordCount"] != 0:
             Trigger.work(res)
+
             
 
 if __name__ == "__main__":
     main()
+
 
