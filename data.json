@@ -4,7 +4,8 @@
         "продолжить",
         "пауза",
         "погромче",
-        "потише"
+        "потише",
+        "громкость"
     ],
     "TwoWordsTriggers": [
         "открой браузер",
@@ -32,6 +33,10 @@
         },
         "потише": {
             "command": "Audio.volumedown(num)",
+            "num": true
+        },
+        "громкость": {
+            "command": "Audio.volume(num)",
             "num": true
         }
     },

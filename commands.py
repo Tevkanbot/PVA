@@ -1,27 +1,29 @@
 import pyautogui
 import time
 import os
-
-
-import winsound as sound
+from sound import Sound
 class Audio:  # Работа со звуком
 
     pyautogui.FAILSAFE = True
+    
 
+    def volume(level):
+        Sound.volume_set(level)
 
     def volumeup(level): # Volume up
-        for i in range(level):
+
+        Sound.volume_up()
+        #for i in range(level):
           
-            pyautogui.press('volumeup')
+            #pyautogui.press('volumeup')
             # time.sleep(1)
 
     def volumedown(level):  # Volume down
-        for i in range(5):
-            pyautogui.press('volumedown')
-            # time.sleep(1)
+        Sound.volume_down()
 
     def mute(level):
-        pyautogui.press('volumemute')
+        Sound.mute()
+                
 
     def play(level):
         pyautogui.press('playpause')
