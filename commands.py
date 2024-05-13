@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import os
+import winsound as sound
 class Audio:               #Работа со звуком
 
     pyautogui.FAILSAFE = True
@@ -8,17 +9,17 @@ class Audio:               #Работа со звуком
     def volumeup(level): # Volume up
         for i in range(level):
             pyautogui.press('volumeup')
-            #time.sleep(1)
+            time.sleep(1)
 
-    def volumedown(): # Volume down
-        for i in range(5):
+    def volumedown(level): # Volume down
+        for i in range(level):
             pyautogui.press('volumedown')
-            #time.sleep(1)
+            time.sleep(1)
 
-    def mute():
+    def mute(level):
         pyautogui.press('volumemute')
     
-    def play():
+    def play(level):
         pyautogui.press('playpause')
 
 
@@ -26,19 +27,19 @@ class Audio:               #Работа со звуком
 
 class Apps:               #работа с браузером
     class browser:
-        def open():
+        def open(level):
             os.startfile("C:\\Users\\User\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe") #C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
 
-        def close():
+        def close(level):
             os.system("taskkill /f /im browser.exe")
             os.system("taskkill /f /im chrome.exe")
 
     class powerpoint:
         
-        def open():
+        def open(level):
             os.startfile("")
 
-        def close():
+        def close(level):
             os.system("")
                                 
 
@@ -46,7 +47,7 @@ class Apps:               #работа с браузером
 
 class Desktop():         #работа с окнами
 
-    def clear():
+    def clear(level):
         pyautogui.hotkey('win','m')
 
                 

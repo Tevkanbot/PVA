@@ -1,4 +1,3 @@
-from typing import Any
 from data import Data
 from commands import Audio, Apps, Desktop
 
@@ -7,8 +6,15 @@ class Trigger:
     def search_trigger(phrase): #ищем снала анктивационное слово, затем тригеры во фразе
         
         phrase = phrase.split() # Разделяем фразу на слова
+
+
+        print("splited: ", phrase)
+
+
         
         start = False
+
+
 
         for word in phrase:
             if word == "клей":
@@ -25,6 +31,8 @@ class Trigger:
 #----------------- Снача ищем двуСловные тригеры--------------------------------------------------------------------
             twoWordsTriggers = data["TwoWordsTriggers"]
             #print(twoWordsTriggers)
+
+            num = 0
 
             for TWTList in twoWordsTriggers: # Перебираем все двуСловные тригеры
 
@@ -49,9 +57,6 @@ class Trigger:
                             for word in phrase:
                                 if word == remainWord: #TWTList.pop(0)
                                     print("Второй из 2 тригеров найден----", copy)
-                                    num = False
-                                    if data["TwoWordsActions"][" ".join(copy)]["num"] :
-                                        num = True
                                     return {"WordCount": 2, "trigger": " ".join(copy), "num": num}
                 
 
@@ -74,29 +79,31 @@ class Trigger:
         
 
     def search_number(fromSearch, phrase):
-        
-        num = False
 
-        if fromSearch["WordCount"] != 0:
-            if fromSearch["num"] == True:
-                for item in phrase:
-                    try:
-                        num =  int(item)
-                        break
+        print(fromSearch)#
 
-                    except ValueError:
-                        pass
-                fromSearch["num"] = num
+        phrase = phrase.split()
+        num = 0
+        num_words = ["ноль", "один","два","три","четыре","пять","шесть","семь","восемь","девять"]
 
-        
-        
-                return fromSearch
+        if fromSearch["WordCount"] != 0: 
+            for word in phrase:
+                if word.isdigit(): 
+                             
 
-                        
-                        
+                    num = int(word)
+                    break
+                else:
+                    #
+                    for el in num_words:
+                        if word == el:
+                            num = el.index(el)
+            fromSearch["num"] = num
+            print("fr", fromSearch)#
+            return fromSearch
 
         else:
-            return False
+            return fromSearch
 
 
 
@@ -104,8 +111,11 @@ class Trigger:
 
     
         data = Data.load()
+        
+        print(fromReturn)
 
         trigWord = fromReturn["trigger"]
+        
         num = fromReturn["num"]
         if fromReturn["WordCount"] == 1:
             exec(data["OneWordActions"][trigWord]["command"])

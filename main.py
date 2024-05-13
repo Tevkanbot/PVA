@@ -6,16 +6,20 @@ from triggers import Trigger
 #from commands import Audio
 
 def main():
-    #trig = Trigger(name = "гена")
 
     while True:
         phrase = Voise.get_phrase()
-        print(phrase)
-        tr = Trigger.search_trigger
+        print("phrase: ", phrase)#
+
+        print(phrase.split()) 
+
+        tr = Trigger.search_trigger(phrase)
+        print("tr: ", tr)#
+
         res = Trigger.search_number(tr, phrase)
-
-        if res != 0:
-
+        print("res: ", res)#
+        
+        if res["WordCount"] != 0:
             Trigger.work(res)
             
 
