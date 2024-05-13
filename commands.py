@@ -3,6 +3,7 @@ import time
 import os
 
 
+import winsound as sound
 class Audio:  # Работа со звуком
 
     pyautogui.FAILSAFE = True
