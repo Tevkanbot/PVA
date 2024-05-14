@@ -32,8 +32,8 @@ class Audio:  # Работа со звуком
 class Apps:  # работа с браузером
     class browser:
         def open(level):
-            #os.startfile("C:\\Users\\User\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe")
-            os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+            os.startfile("C:\\Users\\User\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe")
+            #os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
 
         def close(level):
             os.system("taskkill /f /im browser.exe")
