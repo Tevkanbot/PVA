@@ -1,7 +1,7 @@
 import eel
 
 
-eel.init("C:\\Users\\HOME\\Downloads\\Интерфейс\\web")
+eel.init("web")
 
 @eel.expose
 def process_name(name):
