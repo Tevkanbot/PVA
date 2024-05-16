@@ -12,22 +12,18 @@ def process_name(name):
 
 @eel.expose
 def saveData(inputFieldValue, inputField2Value):
-    if inputFieldValue or inputField2Value:
-        print('Имя приложения:', inputFieldValue)
-        print('Путь приложения:', inputField2Value)
+    print('Имя приложения:', inputFieldValue)
+    print('Путь приложения:', inputField2Value)
    
 @eel.expose
 def saveData2(inputFieldValue2, inputField2Value2):
-    if inputFieldValue2 or inputField2Value2:
-        print('Имя сайта:', inputFieldValue2)
-        print('Ссылка на сайт:', inputField2Value2)
+    print('Имя сайта:', inputFieldValue2)
+    print('Ссылка на сайт:', inputField2Value2)
 
 
 @eel.expose
 def forward_button_pressed():  #отправка о завершении регистрации 
     print(1)
-
-
 
 
 # Запуск приложения
