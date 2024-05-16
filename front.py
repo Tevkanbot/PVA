@@ -1,5 +1,5 @@
 import eel
-
+import bottle_websocket as wbs
 
 eel.init("web")
 

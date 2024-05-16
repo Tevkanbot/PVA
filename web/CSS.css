@@ -334,7 +334,7 @@ border-top-left-radius: 20px;
 border-bottom-left-radius: 20px;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
-background: linear-gradient(to right, #747474, #363636); /* Переливающийся фон */
+background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
 position: fixed; /* Фиксированное позиционирование относительно окна браузера */
 
