@@ -38,15 +38,15 @@
 
             
             </body>
-<div class="inner-rectangle">
+<div class="inner-rectangle" id="inner-rectangle1">
     <div class="welcome-text">Добро пожаловать!</div>
 
 </div>
             
 
 
-<div class="rectangle">
-    <div class="inner2-rectangle">
+<div class="rectangle" >
+    <div class="inner2-rectangle" id="inner22-rectangle">
         Давайте 
         знакомиться! 
         Меня зовут КЛЕЙ, 
@@ -55,7 +55,7 @@
 скажите ПРИВЕТ
       </div>
       
-    <input type="text" class="Namevvod" placeholder="Введите имя">
+
 
     
 
@@ -91,6 +91,18 @@
     <input type="text" id="inputField2" class="inputField" placeholder="Введите имя сайта" style="display: none;">
     <input type="text" id="newInputField2" class="inputField2" placeholder="Введите ссылку на сайт" style="display: none;">
     <button id="saveButton2" class="saveButton" onclick="saveData2()">Сохранить</button>
+    
+
+    <!-- Объекты главного меню -->
+    
+    <div id="menu1-rectangle" class="menu1-rectangle" style="display:none;"></div>
+    <div id="menu2-rectangle" class="menu2-rectangle" style="display:none;"></div>
+    <div id="menu3-rectangle" class="menu3-rectangle" style="display:none;"></div>
+    <div id="menu4-rectangle" class="menu4-rectangle" style="display:none;"></div>
+    <div id="menu5-rectangle" class="menu5-rectangle" style="display:none;"></div>
+    <div id="menu6-rectangle" class="menu6-rectangle" style="display:none;"></div>
+    <div id="menu7-rectangle" class="menu7-rectangle" style="display:none;"></div>
+
 
 
     <script src="eel.js"></script>
@@ -130,7 +142,6 @@ function saveData2(inputFieldValue2, inputField2Value2) {
 
 
 
-
     function handleForwardButton2() {
             document.getElementById('inner6-rectangle').style.display = 'none';
             document.getElementById('inputField').style.display = 'none';
@@ -140,11 +151,30 @@ function saveData2(inputFieldValue2, inputField2Value2) {
             document.getElementById('saveButton').style.display = 'none';
             document.getElementById('backButton').style.display = 'none';
             document.getElementById('forwardButton').style.display = 'none';
-            document.getElementById('inner7-rectangle').style.display = 'block'; // Показываем прямоугольник с id inner7-rectangle
-            document.getElementById('inner8-rectangle').style.display = 'block';
-            document.getElementById('inner9-rectangle').style.display = 'block';
+            document.getElementById('inner7-rectangle').style.display = 'none'; // Показываем прямоугольник с id inner7-rectangle
+            document.getElementById('inner8-rectangle').style.display = 'none';
+            document.getElementById('inner9-rectangle').style.display = 'none';
             document.getElementById('forwardButton2').style.display = 'none';
-            document.getElementById('inner10-rectangle').style.display = 'block';
+            document.getElementById('inner10-rectangle').style.display = 'none';
+            document.getElementById('inner-rectangle1').style.display = 'none';
+            document.getElementById('innerRectangle').style.display = 'none';
+            document.getElementById('secondRectangle').style.display = 'none';
+            document.getElementById('inner22-rectangle').style.display = 'none';
+            document.getElementById('nameInput').value = '';
+            document.getElementById('nameInput').style.display = 'none';
+            document.getElementById('thirdRectangle').style.display = 'none';
+            // сверху уборка старых объектов
+            // появление новых объектов
+            document.getElementById('menu1-rectangle').style.display = 'block';
+            document.getElementById('menu2-rectangle').style.display = 'block';
+            document.getElementById('menu3-rectangle').style.display = 'block';
+            document.getElementById('menu4-rectangle').style.display = 'block';
+            document.getElementById('menu5-rectangle').style.display = 'block';
+            document.getElementById('menu6-rectangle').style.display = 'block';
+            document.getElementById('menu7-rectangle').style.display = 'block';
+
+
+    
         }
 
 
@@ -166,7 +196,7 @@ function saveData2(inputFieldValue2, inputField2Value2) {
     document.getElementById('inner8-rectangle').addEventListener('click', function() {
     var name = document.getElementById('nameInput').value;
     if(name.trim()) {
-        document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добавление приложений!';
+        document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добавление сайтов!';
         document.getElementById('inner6-rectangle').style.display = 'block';
         document.getElementById('inputField2').style.display = 'block';
         document.getElementById('newInputField2').style.display = 'block';
@@ -190,6 +220,8 @@ function saveData2(inputFieldValue2, inputField2Value2) {
             document.getElementById('inner7-rectangle').style.display = 'block'; // Показываем прямоугольник с id inner7-rectangle
             document.getElementById('inner8-rectangle').style.display = 'block';
             document.getElementById('inner9-rectangle').style.display = 'block';
+            document.getElementById('forwardButton').style.display = 'none';
+
             
         }
     

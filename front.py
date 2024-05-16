@@ -3,6 +3,7 @@ import eel
 
 eel.init("web")
 
+
 @eel.expose
 def process_name(name):
     # Обработка имени пользователя
