@@ -1,10 +1,10 @@
 import eel
 import json
 import os
+from data import Data
 
+eel.init("web")
 
-eel.init("C:\\Users\\HOME\\Desktop\\GLUE2\\PVA\\web")
-users_file = 'users.json'
 
 
 @eel.expose
@@ -44,29 +44,29 @@ def toggle_sound(action):
 
 # Функция для проверки наличия имени пользователя
 def is_user_registered():
-    try:
-        with open(users_file, 'r', encoding='utf-8') as file:
-            users = json.load(file)
-            # Проверяем, есть ли хотя бы один пользователь в списке
-            return len(users) > 0
-    except (json.JSONDecodeError, FileNotFoundError):
-        return False
+
+
+    data = Data.load_app_data()
+
+    if data["name"] != "None":
+        return True
+    return False
+
+
+
 
 # Функция для сохранения пользователя в файл
 def save_user(name):
-    # Читаем существующий список пользователей или создаем пустой список, если файла нет
-    try:
-        with open(users_file, 'r', encoding='utf-8') as file:
-            users = json.load(file)
-    except (json.JSONDecodeError, FileNotFoundError):
-        users = []
 
-    # Добавляем нового пользователя в список
-    users.append({'name': name})
+    data = Data.load_app_data()
 
-    # Сохраняем обновленный список пользователей в файл
-    with open(users_file, 'w', encoding='utf-8') as file:
-         json.dump(users, file, ensure_ascii=False, indent=4)
+    data['name'] = name.lower()
+
+    Data.dump_app_data(data)
+
+
+
+
 
 @eel.expose
 def process_name(name):
@@ -80,8 +80,6 @@ def saveData(inputFieldValue, inputField2Value):
 
 @eel.expose
 def saveData2(inputFieldValue2, inputField2Value2):
-    print('Имя сайта:', inputFieldValue2)
-    print('Ссылка на сайт:', inputField2Value2)
     print('Имя сайта:', inputFieldValue2)
     print('Ссылка на сайт:', inputField2Value2)
 

@@ -1,5 +1,5 @@
 from classes.voise import Voise
-from classes.front import Front
+#from classes.front import Front
 from triggers import Trigger
 
 #import os
