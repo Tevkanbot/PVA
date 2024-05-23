@@ -146,12 +146,12 @@ const button = document.getElementById('menu2-rectangle');
 
 
     document.getElementById('saveButton2').addEventListener('click', function() {
-    var inputFieldValue2 = document.getElementById('inputField2').value.trim();
-    var inputField2Value2 = document.getElementById('newInputField2').value.trim();
+    var input_value_12 = document.getElementById('inputField2').value.trim();
+    var input_value_22 = document.getElementById('newInputField2').value.trim();
     
-    if(inputFieldValue2 || inputField2Value2) {
+    if(input_value_12 || input_value_22) {
         // Отправить данные на сервер
-        eel.saveData2(inputFieldValue2, inputField2Value2)()
+        eel.saveData2(input_value_12, input_value_22)()
             .then(() => {
                 // Очистить поля ввода
                 document.getElementById('inputField2').value = '';
@@ -162,9 +162,9 @@ const button = document.getElementById('menu2-rectangle');
 
 });
 eel.expose(saveData2);
-function saveData2(inputFieldValue2, inputField2Value2) {   
-    console.log('inputFieldValue2:', inputFieldValue2);
-    console.log('inputField2Value2:', inputField2Value2);
+function saveData2(input_value_12, input_value_22) {   
+    console.log('input_value_12:', input_value_12);
+    console.log('input_value_22:', input_value_22);
 
 }
 
@@ -255,12 +255,12 @@ function saveData2(inputFieldValue2, inputField2Value2) {
     
         
     document.getElementById('saveButton').addEventListener('click', function() {
-    var inputFieldValue = document.getElementById('inputField').value.trim();
-    var inputField2Value = document.getElementById('newInputField').value.trim();
+    var input_value_1 = document.getElementById('inputField').value.trim();
+    var input_value_2 = document.getElementById('newInputField').value.trim();
     
-    if(inputFieldValue || inputField2Value) {
+    if(input_value_1 || input_value_2) {
         // Отправить данные на сервер
-        eel.saveData(inputFieldValue, inputField2Value)()
+        eel.saveData(input_value_1, input_value_2)()
             .then(() => {
                 // Очистить поля ввода
                 document.getElementById('inputField').value = '';
@@ -272,9 +272,9 @@ function saveData2(inputFieldValue2, inputField2Value2) {
 });
 
 eel.expose(saveData);
-function saveData(inputFieldValue, inputField2Value) {   
-    console.log('inputFieldValue:', inputFieldValue);
-    console.log('inputField2Value:', inputField2Value);
+function saveData(input_value_1, input_value_2) {   
+    console.log('input_value_1:', input_value_1);
+    console.log('input_value_2:', input_value_2);
 }
 
 

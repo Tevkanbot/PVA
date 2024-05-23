@@ -1,6 +1,6 @@
-from classes.voise import Voise
-#from classes.front import Front
-from triggers import Trigger
+from classes.voise import Voise as vo
+from classes.front import Front as fr
+from triggers import Trigger as tr
 
 #import os
 #from data import Data
@@ -8,10 +8,10 @@ from triggers import Trigger
 
 def main():
 
-    # fr = Front()
+    fr.start_app()
 
     while True:
-        phrase = Voise.get_phrase()
+        phrase = vo.get_phrase()
         if phrase == None:
             continue
         
@@ -19,14 +19,14 @@ def main():
 
         print(phrase.split()) 
 
-        tr = Trigger.search_trigger(phrase)
-        print("tr: ", tr)#
+        searched = tr.search_trigger(phrase)
+        print("tr: ", searched)#
 
-        res = Trigger.search_number(tr, phrase)
+        res = tr.search_number(searched, phrase)
         print("res: ", res)#
         
         if res["WordCount"] != 0:
-            Trigger.work(res)
+            tr.work(res)
 
             
 

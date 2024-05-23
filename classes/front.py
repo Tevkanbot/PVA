@@ -1,10 +1,92 @@
 import eel
 import json
 import os
-from data import Data
+from classes.data import Data
 
-eel.init("web")
 
+
+
+#============================================================FRONT FUNCTIONS===================================================================
+
+
+class Front:
+
+
+    # Функция для проверки наличия имени пользователя
+    def is_user_registered():
+
+
+        data = Data.load_app_data()
+
+        if data["name"] != "None":
+            return True
+        return False
+
+
+    # Функция для сохранения пользователя в файл
+    def save_user(name):
+
+        data = Data.load_app_data()
+
+        data['name'] = name.lower()
+
+        Data.dump_app_data(data)
+
+
+    # Функция для сохранения приложения в файл
+    def save_app(input_value_1, input_value_2):
+
+        data = Data.load_app_data()
+
+        data["apps"][input_value_1] = input_value_2.lower()
+
+        Data.dump_app_data(data)
+
+
+    # Функция для сохранения сайта в файл
+    def save_website(input_value_1, input_value_2):
+
+        data = Data.load_app_data()
+
+        data["websites"][input_value_1] = input_value_2.lower()
+
+        Data.dump_app_data(data)
+
+
+    # Главная функция. Запускаем UI
+    def start_app():
+
+        eel.init("web")
+
+        if Front.is_user_registered():
+            eel.start('index.html', size=(700, 500))
+            Front.send_message('Добро пожаловать') 
+        else:
+            eel.start('register.html', size=(700, 500))
+ 
+
+#==============================================================ELL FUNCTIONS======================================================================
+
+
+@eel.expose
+def process_name(name):
+    print(f"Имя пользователя: {name}")
+    Front.save_user(name)  # Сохраняем имя пользователя в файл
+
+@eel.expose
+def saveData(input_value_1, input_value_2):
+    Front.save_app(input_value_1, input_value_2)
+
+@eel.expose
+def saveData2(input_value_1, input_value_2):
+    Front.save_website(input_value_1, input_value_2)
+
+@eel.expose
+def toggle_sound(action):
+    if action == 'Включение звука':
+        print('Включение звука')
+    elif action == 'Выключение звука':
+        print('Выключение звука')
 
 
 @eel.expose
@@ -14,7 +96,7 @@ def send_message(message):
 
 
 # Отправляем "Добро пожаловать" при запуске программы
-send_message('Добро пожаловать')
+
 
 
 @eel.expose
@@ -26,67 +108,4 @@ def enableMicrophone(state):
         send_message("Микрофон включен")
     else:
         print("Выключение микрофона")
-        send_message("Микрофон выключен")
-
-
-
-
-@eel.expose
-def toggle_sound(action):
-    if action == 'Включение звука':
-        print('Включение звука')
-    elif action == 'Выключение звука':
-        print('Выключение звука')
-
-
-
-
-
-# Функция для проверки наличия имени пользователя
-def is_user_registered():
-
-
-    data = Data.load_app_data()
-
-    if data["name"] != "None":
-        return True
-    return False
-
-
-
-
-# Функция для сохранения пользователя в файл
-def save_user(name):
-
-    data = Data.load_app_data()
-
-    data['name'] = name.lower()
-
-    Data.dump_app_data(data)
-
-
-
-
-
-@eel.expose
-def process_name(name):
-    print(f"Имя пользователя: {name}")
-    save_user(name)  # Сохраняем имя пользователя в файл
-
-@eel.expose
-def saveData(inputFieldValue, inputField2Value):
-    print('Имя приложения:', inputFieldValue)
-    print('Путь приложения:', inputField2Value)
-
-@eel.expose
-def saveData2(inputFieldValue2, inputField2Value2):
-    print('Имя сайта:', inputFieldValue2)
-    print('Ссылка на сайт:', inputField2Value2)
-
-# Проверка наличия имени пользователя при запуске
-if is_user_registered():
-    eel.start('index.html', size=(700, 500))
-else:
-    eel.start('register.html', size=(700, 500))
-    
-    
+        ("Микрофон выключен")
