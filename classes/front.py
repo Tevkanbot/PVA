@@ -1,7 +1,7 @@
 import eel
 import json
 import os
-from classes.data import Data
+from .data import Data
 
 
 
@@ -56,7 +56,7 @@ class Front:
     # Главная функция. Запускаем UI
     def start_app():
 
-        eel.init("web")
+        eel.init("C:\\Users\\HOME\\Desktop\\GLUE2\\PVA\\web")
 
         if Front.is_user_registered():
             eel.start('index.html', size=(700, 500))

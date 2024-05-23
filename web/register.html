@@ -77,15 +77,15 @@
     <input type="text" id="inputField" class="inputField" placeholder="Введите имя приложения" style="display: none;">
     <input type="text" id="newInputField" class="inputField2" placeholder="Введите путь к приложению" style="display: none;">
     <button id="saveButton" class="saveButton" onclick="saveData()">Сохранить</button>
-</div>
-<button id="forwardButton" class="forwardButton" style="display:none;" onclick="handleForwardButton()">Дальше</button> <!-- Появление у назначения приложений -->
+ </div>
+ <button id="forwardButton" class="forwardButton" style="display:none;" onclick="handleForwardButton()">Дальше</button> <!-- Появление у назначения приложений -->
     </div>
     <div id="inner7-rectangle" class="inner7-rectangle" style="display:none;"></div>
     <div id="inner8-rectangle" class="inner8-rectangle" style="display:none;" >Нажмите, чтобы назначить имена для открытия сайтов</div>
     <div id="inner9-rectangle" class="inner9-rectangle" style="display:none;">Добавьте свои сайты</div>
     <button id="backButton2" class="backButton2" onclick="handleBackButton2()">Назад</button>
-</div><!-- Появление у назначения сайтов -->
-<button id="forwardButton2" class="forwardButton2" style="display:none;" onclick="handleForwardButton2()">Дальше</button> <!-- Появление у назначения приложений -->
+ </div><!-- Появление у назначения сайтов -->
+ <button id="forwardButton2" class="forwardButton2" style="display:none;" onclick="handleForwardButton2()">Дальше</button> <!-- Появление у назначения приложений -->
     </div>
     <div id="inner10-rectangle" class="inner10-rectangle" style="display:none;"></div>
 
@@ -96,26 +96,10 @@
 
     <!-- Объекты главного меню -->
     
-    
-    <button id="menu2-rectangle"class="menu2-rectangle">
-            <img src="True_m.png" id="image">
-        </button>
-    
-    <div id="menu1-rectangle" class="menu1-rectangle" style="display:block;">1</div>
-    
-    <div id="menu3-rectangle" class="menu3-rectangle" style="display:none;">4</div>
-    <div id="menu4-rectangle" class="menu4-rectangle" style="display:none;">5</div>
-    <div id="menu5-rectangle" class="menu5-rectangle" style="display:none;">6</div>
-    <div id="menu6-rectangle" class="menu6-rectangle" style="display:none;">7</div>
-    <div id="menu7-rectangle" class="menu7-rectangle" style="display:none;">8</div>
-
-
 
     <script src="eel.js"></script>
     <script type="text/javascript">
     
-    document.getElementById('menu1-rectangle').style.display = 'none';
-    document.getElementById('menu2-rectangle').style.display = 'none';
     document.getElementById('backButton2').style.display = 'none';
     document.getElementById('saveButton2').style.display = 'none';
     document.getElementById('saveButton').style.display = 'none';
@@ -123,26 +107,6 @@
     document.getElementById('forwardButton2').addEventListener('click', function() {
     eel.forward_button_pressed();  // Вызов функции Python
 });
-
-
-const button = document.getElementById('menu2-rectangle');
-        const image = document.getElementById('image');
-        let previousImageSource = image.src;
-
-        button.addEventListener('click', function() {
-            if (image.src.endsWith('True_m.png')) {
-                image.src = 'Folse_m.png';
-                previousImageSource = 'True_m.png';
-                eel.toggle_sound('Выключение звука')();
-            } else {
-                image.src = previousImageSource;
-                eel.toggle_sound('Включение звука')();
-            }
-        });
-
-
-
-
 
 
     document.getElementById('saveButton2').addEventListener('click', function() {
@@ -193,14 +157,7 @@ function saveData2(input_value_12, input_value_22) {
             document.getElementById('thirdRectangle').style.display = 'none';
             // сверху уборка старых объектов
             // появление новых объектов
-            document.getElementById('menu1-rectangle').style.display = 'block';
-            document.getElementById('menu2-rectangle').style.display = 'block';
-            document.getElementById('menu3-rectangle').style.display = 'block';
-            document.getElementById('menu4-rectangle').style.display = 'block';
-            document.getElementById('menu5-rectangle').style.display = 'block';
-            document.getElementById('menu6-rectangle').style.display = 'block';
-            document.getElementById('menu7-rectangle').style.display = 'block';
-
+            window.location.replace('index.html');
 
     
         }
@@ -360,7 +317,7 @@ document.getElementById('newInputField').addEventListener('input', function() {
     </script>
     
 </body>
-
+</body>
 
 
 
