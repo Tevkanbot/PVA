@@ -235,7 +235,7 @@ align-items: center; /* Вертикальное центрирование со
 
 .menu2-rectangle{
 width: 8vw; /* Ширина поля для ввода */
-height: 10vh; /* Высота поля для ввода */
+height: 11vh; /* Высота поля для ввода */
 top: 85%; /* Позиционирование по вертикали */
 left: 50%; /* Позиционирование по горизонтали */
 
@@ -253,7 +253,7 @@ align-items: center; /* Вертикальное центрирование со
 
 .menu3-rectangle{
 width: 8vw; /* Ширина поля для ввода */
-height: 10vh; /* Высота поля для ввода */
+height: 11vh; /* Высота поля для ввода */
 top: 85%; /* Позиционирование по вертикали */
 left: 61%; /* Позиционирование по горизонтали */
 
@@ -345,9 +345,33 @@ align-items: center; /* Вертикальное центрирование со
 }
 
 
+#chat-window {
+  width: 58vw;
+  height: 55vh;
+  top: 50%;
+  left: 36%;
+  font-size: 18px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #c1f6ff, #83d2ff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll; /* Добавленное свойство для создания ползунка прокрутки */
+  padding: 10px;
+}
 
 
-
+.message {
+  background-color: #f0f0f0; /* Задает цвет фона для сообщений */
+  border-radius: 5px; /* Задает скругление углов */
+  padding: 4px; /* Задает внутренний отступ */
+  margin-bottom: 5px; /* Задает отступ снизу между сообщениями */
+  word-wrap: break-word; /* Позволяет переносить длинные слова */
+  
+}
 
 
 .inputField{
