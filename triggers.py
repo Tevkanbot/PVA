@@ -1,4 +1,4 @@
-from data import Data
+from classes.data import Data
 from commands import Audio, Apps, Desktop
 
 class Trigger:
@@ -26,7 +26,7 @@ class Trigger:
         if start == True: # Если активатор найден, то ищем тригеры во фразе
 
 
-            data = Data.load() # Загружаем данные, в особенности тригерные слова
+            data = Data.load_triggers() # Загружаем данные, в особенности тригерные слова
 
 #----------------- Снача ищем двуСловные тригеры--------------------------------------------------------------------
             twoWordsTriggers = data["TwoWordsTriggers"]
@@ -110,7 +110,7 @@ class Trigger:
     def work(fromReturn):
 
     
-        data = Data.load()
+        data = Data.load_triggers()
         
         print(fromReturn)
 

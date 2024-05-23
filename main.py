@@ -1,4 +1,5 @@
-from voise import Voise
+from classes.voise import Voise
+from classes.front import Front
 from triggers import Trigger
 
 #import os
@@ -7,8 +8,13 @@ from triggers import Trigger
 
 def main():
 
+    # fr = Front()
+
     while True:
         phrase = Voise.get_phrase()
+        if phrase == None:
+            continue
+        
         print("phrase: ", phrase)#
 
         print(phrase.split()) 
