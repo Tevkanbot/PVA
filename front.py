@@ -82,6 +82,8 @@ def saveData(inputFieldValue, inputField2Value):
 def saveData2(inputFieldValue2, inputField2Value2):
     print('Имя сайта:', inputFieldValue2)
     print('Ссылка на сайт:', inputField2Value2)
+    print('Имя сайта:', inputFieldValue2)
+    print('Ссылка на сайт:', inputField2Value2)
 
 # Проверка наличия имени пользователя при запуске
 if is_user_registered():
