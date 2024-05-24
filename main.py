@@ -9,10 +9,11 @@ from multiprocessing import Process as pr
 #from data import Data
 #from commands import Audio
 #fr.send_new_message("test")
-@eel.expose
-def send_message(message):
-    # Здесь ваша логика для отправки сообщения
-    eel.send_message_to_chat(message)
+
+# @eel.expose
+# def send_message(message):
+#     # Здесь ваша логика для отправки сообщения
+#     eel.send_message_to_chat(message)
 
 
 
@@ -30,7 +31,7 @@ def main():
 
 
 
-        #print(phrase.split()) 
+        print(phrase) 
 
         searched = tr.search_trigger(phrase)
         #print("tr: ", searched)#
