@@ -1,72 +1,67 @@
 import eel
 import json
-import os
+from pathlib import Path
 from .data import Data
 
 
 
 
-#============================================================FRONT FUNCTIONS===================================================================
+
+
+
+@eel.expose
+def send_message(message):
+    # Здесь ваша логика для отправки сообщения
+    eel.send_message_to_chat(message)
+
 
 
 class Front:
 
-
-    # Функция для проверки наличия имени пользователя
+    @staticmethod
     def is_user_registered():
-
-
         data = Data.load_app_data()
+        return data.get("name") != "None"
 
-        if data["name"] != "None":
-            return True
-        return False
-
-
-    # Функция для сохранения пользователя в файл
+    @staticmethod
     def save_user(name):
-
         data = Data.load_app_data()
-
         data['name'] = name.lower()
-
         Data.dump_app_data(data)
 
-
-    # Функция для сохранения приложения в файл
+    @staticmethod
     def save_app(input_value_1, input_value_2):
-
         data = Data.load_app_data()
-
         data["apps"][input_value_1] = input_value_2.lower()
-
         Data.dump_app_data(data)
 
-
-    # Функция для сохранения сайта в файл
+    @staticmethod
     def save_website(input_value_1, input_value_2):
-
         data = Data.load_app_data()
-
         data["websites"][input_value_1] = input_value_2.lower()
-
         Data.dump_app_data(data)
 
-
-    # Главная функция. Запускаем UI
+    @staticmethod
     def start_app():
+        # Определяем путь к корню проекта
+        project_root = Path(__file__).resolve().parent.parent
+        web_dir = project_root / 'web'
 
-        eel.init("C:\\Users\\HOME\\Desktop\\GLUE2\\PVA\\web")
+        # Инициализация Eel с использованием относительного пути
+        eel.init(web_dir.as_posix())
 
         if Front.is_user_registered():
             eel.start('index.html', size=(700, 500))
-            Front.send_message('Добро пожаловать') 
+            Front.send_message('Добро пожаловать')
         else:
             eel.start('register.html', size=(700, 500))
- 
+
+    @staticmethod        
+    def send_new_message(message):
+        # Здесь ваша логика для отправки сообщения
+        send_message(message)
 
 #==============================================================ELL FUNCTIONS======================================================================
-
 
 @eel.expose
 def process_name(name):
@@ -90,22 +85,13 @@ def toggle_sound(action):
 
 
 @eel.expose
-def send_message(message):
-    # Здесь ваша логика для отправки сообщения
-    eel.send_message_to_chat(message)
-
-
-# Отправляем "Добро пожаловать" при запуске программы
-
-
-
-@eel.expose
 def enableMicrophone(state):
-    
     if state:
         print("Включение микрофона")
         # Здесь должен быть код для включения микрофона
         send_message("Микрофон включен")
     else:
         print("Выключение микрофона")
-        ("Микрофон выключен")
+        send_message("Микрофон выключен")
+
+# Пример вызова для запуска приложения

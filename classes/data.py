@@ -1,44 +1,55 @@
 import json
-class Data():
-    
-    def load_triggers(): # Получаем словарь из файла users.json и возвращаем его
-        data = {} # рабочий словарь
+from pathlib import Path
 
-        with open("jsons\\triggers_and_commands.json", "r", encoding="utf-8") as file:
+class Data:
+    # Определяем путь к директории скрипта
+    script_dir = Path(__file__).parent
+    
+    @staticmethod
+    def load_triggers():
+        # Путь к файлу triggers_and_commands.json
+        file_path = Data.script_dir / "jsons" / "triggers_and_commands.json"
+        
+        with open(file_path, "r", encoding="utf-8") as file:
             data = json.load(file)
         
         return data
 
-    def dump_triggers(data): # Проверяем что аргумент это словарь, и если это словарь, то сохраняем его в файл
-
-        if type(data)!= dict:
+    @staticmethod
+    def dump_triggers(data):
+        if not isinstance(data, dict):
             raise TypeError("Argument must be a dict")
-
-        with open("jsons\\triggers_and_commands.json", "w", encoding="utf-8") as file:
+        
+        # Путь к файлу triggers_and_commands.json
+        file_path = Data.script_dir / "jsons" / "triggers_and_commands.json"
+        
+        with open(file_path, "w", encoding="utf-8") as file:
             json.dump(data, file)
-            return True # Подтверждам успешное сохранение (для отладки мб пригодиться)
+        
+        return True
     
-
-
-    def load_app_data(): # Получаем словарь из файла users.json и возвращаем его
-        data = {} # рабочий словарь
-
-        with open("C:\\Users\\HOME\\Desktop\\GLUE2\\PVA\\classes\\jsons\\app_data.json", "r", encoding="utf-8") as file:
+    @staticmethod
+    def load_app_data():
+        # Путь к файлу app_data.json
+        file_path = Data.script_dir / "jsons" / "app_data.json"
+        
+        with open(file_path, "r", encoding="utf-8") as file:
             data = json.load(file)
         
         return data
 
-
-
-    def dump_app_data(data): # Проверяем что аргумент это словарь, и если это словарь, то сохраняем его в файл
-
-        if type(data)!= dict:
+    @staticmethod
+    def dump_app_data(data):
+        if not isinstance(data, dict):
             raise TypeError("Argument must be a dict")
-
-        with open("C:\\Users\\HOME\\Desktop\\GLUE2\\PVA\\classes\\jsons\\app_data.json", "w", encoding="utf-8") as file:
+        
+        # Путь к файлу app_data.json
+        file_path = Data.script_dir / "jsons" / "app_data.json"
+        
+        with open(file_path, "w", encoding="utf-8") as file:
             json.dump(data, file)
-            return True # Подтверждам успешное сохранение (для отладки мб пригодиться)
         
-        
+        return True
+
             
 

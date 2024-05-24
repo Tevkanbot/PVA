@@ -8,7 +8,7 @@ class Trigger:
         phrase = phrase.split() # Разделяем фразу на слова
 
 
-        print("splited: ", phrase)
+        #print("splited: ", phrase)
 
 
         
@@ -18,7 +18,7 @@ class Trigger:
 
         for word in phrase:
             if word == "клей":
-                print("КЛЕЙ обнаружен \n")
+                #print("КЛЕЙ обнаружен \n")
                 start = True
                 break
 
@@ -80,7 +80,7 @@ class Trigger:
 
     def search_number(fromSearch, phrase):
 
-        print(fromSearch)#
+        
 
         phrase = phrase.split()
         num = 0
@@ -99,7 +99,7 @@ class Trigger:
                         if word == el:
                             num = el.index(el)
             fromSearch["num"] = num
-            print("fr", fromSearch)#
+            
             return fromSearch
 
         else:
@@ -112,7 +112,7 @@ class Trigger:
     
         data = Data.load_triggers()
         
-        print(fromReturn)
+        #print(fromReturn)
 
         trigWord = fromReturn["trigger"]
         
@@ -120,9 +120,9 @@ class Trigger:
         if fromReturn["WordCount"] == 1:
             exec(data["OneWordActions"][trigWord]["command"])
 
-            print("я запустиль:", trigWord, ">>>", data["OneWordActions"][trigWord]["command"])
+            print("Запущено:", trigWord, ">>>", data["OneWordActions"][trigWord]["command"])
 
         if fromReturn["WordCount"] == 2:
             exec(data["TwoWordsActions"][trigWord]["command"])
 
-            print("я запустиль:", trigWord, ">>>", data["TwoWordsActions"][trigWord]["command"])
+            print("Запущено:", trigWord, ">>>", data["TwoWordsActions"][trigWord]["command"])
