@@ -1,23 +1,34 @@
 from classes.voise import Voise as vo
 from classes.front import Front as fr
 from triggers import Trigger as tr
+import eel
 
 from multiprocessing import Process as pr
 
 #import os
 #from data import Data
 #from commands import Audio
+#fr.send_new_message("test")
+@eel.expose
+def send_message(message):
+    # Здесь ваша логика для отправки сообщения
+    eel.send_message_to_chat(message)
+
+
 
 def main():
 
     #fr.start_app()
-
+    
     while True:
         phrase = vo.get_phrase()
         if phrase == None:
             continue
         
-        fr.send_new_message(phrase)
+        #fr.send_new_message("ASD[ASdd[asDFJKSaldfhaksdyfGD,FK]]")
+
+
+
 
         #print(phrase.split()) 
 

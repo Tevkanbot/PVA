@@ -9,11 +9,11 @@ from .data import Data
 
 
 
+
 @eel.expose
 def send_message(message):
     # Здесь ваша логика для отправки сообщения
     eel.send_message_to_chat(message)
-
 
 
 class Front:
@@ -56,10 +56,13 @@ class Front:
         else:
             eel.start('register.html', size=(700, 500))
 
-    @staticmethod        
-    def send_new_message(message):
-        # Здесь ваша логика для отправки сообщения
-        send_message(message)
+    
+
+
+    def send_new_message(phrase):
+        send_message(phrase)
+                
+
 
 #==============================================================ELL FUNCTIONS======================================================================
 
@@ -82,6 +85,7 @@ def toggle_sound(action):
         print('Включение звука')
     elif action == 'Выключение звука':
         print('Выключение звука')
+
 
 
 @eel.expose
