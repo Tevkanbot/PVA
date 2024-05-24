@@ -52,7 +52,7 @@ class Front:
 
         if Front.is_user_registered():
             eel.start('index.html', size=(700, 500))
-            Front.send_message('Добро пожаловать')
+            send_message('Добро пожаловать')
         else:
             eel.start('register.html', size=(700, 500))
 
@@ -83,8 +83,10 @@ def saveData2(input_value_1, input_value_2):
 def toggle_sound(action):
     if action == 'Включение звука':
         print('Включение звука')
+        send_message("Включение звука")
     elif action == 'Выключение звука':
         print('Выключение звука')
+        send_message("Выключение звука")
 
 
 
