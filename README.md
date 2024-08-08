@@ -1,8 +1,11 @@
-# Run this to create venv
+# First, run this to create venv
 python -m venv .venv
 
-# Run this to enter venv
+# Than run this to enter venv
 .venv\Scripts\activate 
 
-# Run this install requirements
+# Then upgrade pip
+python.exe -m pip install --upgrade pip
+
+# Run this to finally install requirements
 python -m pip install -r requirements.txt
