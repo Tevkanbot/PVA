@@ -1,7 +1,7 @@
 import pyautogui
 import time
 import os
-from classes.sound import Sound
+from .sound import Sound
 class Audio:  # Работа со звуком
 
     pyautogui.FAILSAFE = True

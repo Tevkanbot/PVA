@@ -1,5 +1,5 @@
-from classes.data import Data
-from commands import Audio, Apps, Desktop
+from backend.data import Data
+from backend.commands import Audio, Apps, Desktop
 
 class Trigger:
                 

@@ -1,4 +1,4 @@
-from classes.keyboardd import Keyboard
+from .keyboard import Keyboard
 
 
 class Sound:

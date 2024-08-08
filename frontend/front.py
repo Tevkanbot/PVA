@@ -1,7 +1,7 @@
 import eel
 import json
 from pathlib import Path
-from .data import Data
+from backend.data import Data
 
 
 

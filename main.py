@@ -1,6 +1,6 @@
-from classes.voise import Voise as vo
-from classes.front import Front as fr
-from triggers import Trigger as tr
+from backend.voise import Voise as vo
+from frontend.front import Front as fr
+from backend.triggers import Trigger as tr
 import eel
 
 from multiprocessing import Process as pr
