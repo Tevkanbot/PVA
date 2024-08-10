@@ -2,6 +2,9 @@ import pyautogui
 import time
 import os
 from .sound import Sound
+import winreg # Для работы с реестром Windows
+
+
 class Audio:  # Работа со звуком
 
     pyautogui.FAILSAFE = True
@@ -13,10 +16,6 @@ class Audio:  # Работа со звуком
     def volumeup(level): # Volume up
 
         Sound.volume_up()
-        #for i in range(level):
-          
-            #pyautogui.press('volumeup')
-            # time.sleep(1)
 
     def volumedown(level):  # Volume down
         Sound.volume_down()
@@ -30,14 +29,50 @@ class Audio:  # Работа со звуком
 
 
 class Apps:  # работа с браузером
+
+    class Search_File:
+        
+        def find_browser():
+
+            def find_browser_path(browser_name):
+                #Ищет путь к браузеру по его имени.
+
+                try:
+                    # Открываем ключ реестра для браузеров
+                    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths")
+
+                    # Ищем ключ с именем браузера
+                    with winreg.OpenKey(key, browser_name + ".exe") as browser_key:
+                        # Извлекаем путь из значения по умолчанию
+                        path, _ = winreg.QueryValueEx(browser_key, "")
+                        return path
+
+                except FileNotFoundError:
+                    pass
+                    return None
+
+            yandex_path = find_browser_path("yandexbrowser")
+            google_path = find_browser_path("chrome")
+
+            if yandex_path:
+                return yandex_path
+        
+            elif google_path:
+                return google_path
+        
+        
+            
+
     class browser:
         def open(level):
-            os.startfile("C:\\Users\\User\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe")
-            #os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+            browser_path = Apps.Search_File.find_browser()
+
+            os.startfile(browser_path)
 
         def close(level):
             os.system("taskkill /f /im browser.exe")
             os.system("taskkill /f /im chrome.exe")
+
 
     class powerpoint:  # открытие преложений
 
@@ -46,6 +81,11 @@ class Apps:  # работа с браузером
 
         def close(level):
             os.system("taskkill /f /im POWERPNT.EXE")
+
+
+
+
+
 
 
 class Desktop:  # работа с окнами
