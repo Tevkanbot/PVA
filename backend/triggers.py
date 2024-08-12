@@ -1,86 +1,60 @@
 from backend.data import Data
 from backend.commands import Audio, Apps, Desktop
 
+
 class Trigger:
                 
-    def search_trigger(phrase): #ищем снала анктивационное слово, затем тригеры во фразе
-        
-        phrase = phrase.split() # Разделяем фразу на слова
-
-
-        #print("splited: ", phrase)
-
-
+    def search_trigger(phrase):  # Ищем сначала активационное слово, затем триггеры во фразе
         
         start = False
+        phrase = phrase.split()  # Разделяем фразу на слова
 
-
-
-        for word in phrase:
+        for word in phrase:  # Ищем активационное слово, референс - фраза "Алиса"
             if word == "клей":
-                #print("КЛЕЙ обнаружен \n")
                 start = True
                 break
 
+        if start:  # Если активатор найден, то ищем триггеры во фразе
 
-        if start == True: # Если активатор найден, то ищем тригеры во фразе
-
-
-            data = Data.load_triggers() # Загружаем данные, в особенности тригерные слова
-
-#----------------- Снача ищем двуСловные тригеры--------------------------------------------------------------------
-            twoWordsTriggers = data["TwoWordsTriggers"]
-            #print(twoWordsTriggers)
-
+            data = Data.load_triggers()  # Загружаем данные, в особенности триггерные слова
+            two_word_triggers = data["two_word_triggers"]
             num = 0
 
-            for TWTList in twoWordsTriggers: # Перебираем все двуСловные тригеры
+            for two_word_triggers_list in two_word_triggers:  # Перебираем все двусловные триггеры
 
-                TWTList = TWTList.split() # Превращаем двуСловный тригер в список
-                #print (TWTList)
-                for trigWord in TWTList: # Перебираем все тригеры(слова) из двуСловного тригера
+                two_word_triggers_list = two_word_triggers_list.split()  # Превращаем двусловный триггер в список
 
-                    for word in phrase: # Перебираем все слова в фразе
+                for trigger_word in two_word_triggers_list:  # Перебираем все триггеры (слова) из двусловного триггера
 
-                        if trigWord == word: # Если нашли совпадение
+                    for word in phrase:  # Перебираем все слова в фразе
 
+                        if trigger_word == word:  # Если нашли совпадение
 
-                            print("Первый из 2 тригеров найден!")
-                            copy = TWTList.copy()
-
-                            #TWTList.remove(trigWord)
+                            potential_trigger = two_word_triggers_list.copy()
                             
-                            TWTList.remove(trigWord)
+                            two_word_triggers_list.remove(trigger_word)
                             
-                            remainWord = TWTList.pop(0)
+                            remainWord = two_word_triggers_list.pop(0)
 
                             for word in phrase:
-                                if word == remainWord: #TWTList.pop(0)
-                                    print("Второй из 2 тригеров найден----", copy)
-                                    return {"WordCount": 2, "trigger": " ".join(copy), "num": num}
-                
-
-                                                                                                                
-
-                            
-#----------------Потом одноСловные тригеры---------------------------------------------------------
-
+                                if word == remainWord:
+                                    return {"WordCount": 2, "trigger": " ".join(potential_trigger), "num": num}
+            
+            # Если не нашли двусловные триггеры, ищем однословные триггеры
             for word in phrase:
-                for trigger in data["OneWordTriggers"]:
+                for trigger in data["one_word_triggers"]:
                     if trigger == word:
                         return {"WordCount": 1, "trigger": word, "num": num}
-                        
             
+            # Если не найдены ни двусловные, ни однословные триггеры
+            return {"WordCount": 0}
 
         else:
+            # Если активационное слово не найдено
             return {"WordCount": 0}
-                                
 
-        
 
     def search_number(fromSearch, phrase):
-
-        
 
         phrase = phrase.split()
         num = 0
@@ -107,22 +81,19 @@ class Trigger:
 
 
 
-    def work(fromReturn):
+    def start(fromReturn):
 
-    
         data = Data.load_triggers()
-        
-        #print(fromReturn)
 
         trigWord = fromReturn["trigger"]
         
         num = fromReturn["num"]
         if fromReturn["WordCount"] == 1:
-            exec(data["OneWordActions"][trigWord]["command"])
+            exec(data["one_word_actions"][trigWord]["command"])
 
-            print("Запущено:", trigWord, ">>>", data["OneWordActions"][trigWord]["command"])
+            print("Запущено:", trigWord, ">>>", data["one_word_actions"][trigWord]["command"])
 
         if fromReturn["WordCount"] == 2:
-            exec(data["TwoWordsActions"][trigWord]["command"])
+            exec(data["two_word_actions"][trigWord]["command"])
 
-            print("Запущено:", trigWord, ">>>", data["TwoWordsActions"][trigWord]["command"])
+            print("Запущено:", trigWord, ">>>", data["two_word_actions"][trigWord]["command"])

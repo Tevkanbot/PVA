@@ -1,4 +1,5 @@
 SpeechRecognition
 pyautogui
 eel
-pyaudio
+FastAPI[all]
+requests
