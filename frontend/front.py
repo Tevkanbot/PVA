@@ -37,8 +37,32 @@ class Front:
     def start_app():
         if Front.is_user_registered():
             eel.start('index.html', size=(700, 500), port=5000)
+            send_message('Добро пожаловать')
         else:
             eel.start('register.html', size=(700, 500), port=5000)
+
+    
+
+
+    def send_new_message(phrase):
+        send_message(phrase)
+                
+
+
+#==============================================================ELL FUNCTIONS======================================================================
+
+@eel.expose
+def process_name(name):
+    print(f"Имя пользователя: {name}")
+    Front.save_user(name)  # Сохраняем имя пользователя в файл
+
+@eel.expose
+def saveData(input_value_1, input_value_2):
+    Front.save_app(input_value_1, input_value_2)
+
+@eel.expose
+def saveData2(input_value_1, input_value_2):
+    Front.save_website(input_value_1, input_value_2)
 
 @eel.expose
 def toggle_sound(action):
