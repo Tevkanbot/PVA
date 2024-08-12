@@ -1,5 +1,5 @@
 {
-    "OneWordTriggers": [
+    "one_word_triggers": [
         "стоп",
         "продолжить",
         "пауза",
@@ -7,14 +7,14 @@
         "потише",
         "громкость"
     ],
-    "TwoWordsTriggers": [
+    "two_word_triggers": [
         "открой браузер",
         "закрой браузер",
         "открой powerpoint",
         "закрой powerpoint",
         "сверни окна"
     ],
-    "OneWordActions": {
+    "one_word_actions": {
         "стоп": {
             "command": "Audio.play(num)",
             "num": false
@@ -40,7 +40,7 @@
             "num": true
         }
     },
-    "TwoWordsActions": {
+    "two_word_actions": {
         "открой браузер": {
             "command": "Apps.browser.open(num)",
             "num": false
