@@ -51,10 +51,10 @@ class Front:
         eel.init(web_dir.as_posix())
 
         if Front.is_user_registered():
-            eel.start('index.html', size=(700, 500))
+            eel.start('index.html', size=(700, 500), port=8001)
             send_message('Добро пожаловать')
         else:
-            eel.start('register.html', size=(700, 500))
+            eel.start('register.html', size=(700, 500), port = 8001)
 
     
 

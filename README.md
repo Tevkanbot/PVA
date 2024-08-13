@@ -2,7 +2,7 @@
 python -m venv .venv
 
 # Than run this to enter venv
-.venv\Scripts\activate 
+.venv\Scripts\activate
 
 # Then upgrade pip
 python.exe -m pip install --upgrade pip

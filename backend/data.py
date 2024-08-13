@@ -51,3 +51,4 @@ class Data:
             json.dump(data, file)
         
         return True
+    
