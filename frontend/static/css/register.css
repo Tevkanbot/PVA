@@ -1,0 +1,111 @@
+.rectangle {
+  width: 92vw;
+  height: 77vh;
+  background-color: #393E46;
+  border-radius: 20px;
+  position: fixed;
+  bottom: 6%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner2-rectangle {
+  width: 22.3vw;
+  height: 50vh;
+  background: linear-gradient(to right, #BDE3FF, #8ae6d2);
+  border-radius: 20px;
+  position: fixed;
+  top: 48%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Calibri', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  padding: 5px;
+}
+
+.inner4-rectangle {
+  width: 22vw;
+  height: 15vh;
+  background: linear-gradient(to right, #BDE3FF, #19d5db);
+  border-radius: 20px;
+  position: fixed;
+  top: 30vh;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Calibri', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  padding: 5px;
+}
+
+.inner5-rectangle {
+  width: 24vw;
+  height: 69vh;
+  background: rgba(124, 124, 124, 0.6);
+  border-radius: 20px;
+  position: fixed;
+  top: 56.5vh;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner6-rectangle {
+  width: 90vw;
+  height: 75vh;
+  background: rgba(59, 59, 59, 0.9);
+  border-radius: 20px;
+  position: fixed;
+  bottom: 6%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.backButton {
+  background-color: #1E1E1E;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.Namevvod {
+  width: 23vw; /* Ширина поля для ввода */
+  height: 15vh; /* Высота поля для ввода */
+  padding: 20px; /* Внутренний отступ */
+  top: 83%; /* Позиционирование по вертикали */
+  left: 20%; /* Позиционирование по горизонтали */
+  
+  font-size: 18px; /* Размер шрифта */
+  border-radius: 15px; /* Радиус скругления углов */
+  border: 1px solid #ccc; /* Тонкая серая рамка */
+  background: linear-gradient(to right, #BDE3FF, #8ae6d2); /* Переливающийся фон */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  
+  transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+  display: flex; /* Используйте Flexbox для центрирования содержимого */
+  justify-content: center; /* Горизонтальное центрирование содержимого */
+  align-items: center; /* Вертикальное центрирование содержимого */
+  }

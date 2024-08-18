@@ -1,0 +1,285 @@
+.rectangle {
+    width: 92vw; /* Ширина прямоугольника равна 90% от ширины области просмотра */
+    height: 77vh; /* Высота прямоугольника равна 85% от высоты области просмотра */
+    background-color: #393E46; /* Цвет фона прямоугольника */
+    border-radius: 20px; /* Радиус скругления углов */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    bottom: 6%; /* Отступ снизу равен 8% от высоты области просмотра */
+    right: 5%; /* Отступ справа равен 5% от ширины области просмотра */
+    display: flex; /* Используем Flexbox для центрирования внутреннего прямоугольника */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+   
+  }
+
+  .menu1-rectangle{
+    width: 39vw; /* Ширина поля для ввода */
+    height: 10.5vh; /* Высота поля для ввода */
+    top: 87%; /* Позиционирование по вертикали */
+    left: 25%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right, #9dffb2, #4ECCA3); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    }
+    
+    .menu2-rectangle{
+    width: 8vw; /* Ширина поля для ввода */
+    height: 11vh; /* Высота поля для ввода */
+    top: 87%; /* Позиционирование по вертикали */
+    left: 52%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right, #9dffb2, #4ECCA3); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    }
+    
+    .menu3-rectangle{
+    width: 8vw; /* Ширина поля для ввода */
+    height: 11vh; /* Высота поля для ввода */
+    top: 87%; /* Позиционирование по вертикали */
+    left: 63%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right, #9dffb2, #4ECCA3); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    }
+    
+    .menu4-rectangle{
+    width: 58vw; /* Ширина поля для ввода */
+    height: 55vh; /* Высота поля для ввода */
+    top: 50%; /* Позиционирование по вертикали */
+    left: 36%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right, #c1f6ff, #83d2ff); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    }
+    
+    .menu5-rectangle{
+    width: 22vw; /* Ширина поля для ввода */
+    height: 59vh; /* Высота поля для ввода */
+    top: 50%; /* Позиционирование по вертикали */
+    left: 81%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right, #5ac8cc, #11999E); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    }
+    
+    .menu6-rectangle{
+    width: 20vw; /* Ширина поля для ввода */
+    height: 7.5vh; /* Высота поля для ввода */
+    top: 87%; /* Позиционирование по вертикали */
+    left: 81%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right, #5accaf, #119e80); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    
+    font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    color: #000000; /* Цвет текста */
+    
+    
+    padding-top: 10px;/* Верхний внутренний отступ: 15 пикселей */
+    padding-right: 0px;/* Правфй внутренний отступ: 10 пикселей */
+    padding-bottom: 0px;/* Нижний внутренний отступ: 5 пикселей */
+    padding-left: 12px;/* Левый элемента: 1 пиксель толщины, черного цвета */
+    
+    }
+    
+    .menu7-rectangle{
+    width: 11vw; /* Ширина поля для ввода */
+    height: 10vh; /* Высота поля для ввода */
+    top: 9%; /* Позиционирование по вертикали */
+    left: 81%; /* Позиционирование по горизонтали */
+    
+    font-size: 18px; /* Размер шрифта */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+    
+    font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+    font-size: 30px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    color: #000000; /* Цвет текста */
+    
+    
+    padding-top: 11px;/* Верхний внутренний отступ: 15 пикселей */
+    padding-right: 0px;/* Правфй внутренний отступ: 10 пикселей */
+    padding-bottom: 0px;/* Нижний внутренний отступ: 5 пикселей */
+    padding-left: 120px;/* Левый элемента: 1 пиксель толщины, черного цвета */
+    
+    }
+    
+    .menu8-rectangle{
+      width: 11vw; /* Ширина поля для ввода */
+      height: 11vh; /* Высота поля для ввода */
+      top: 9%; /* Позиционирование по вертикали */
+      left: 9%; /* Позиционирование по горизонтали */
+      
+      font-size: 18px; /* Размер шрифта */
+      border-radius: 15px; /* Радиус скругления углов */
+      background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+      position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+      
+      transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+      display: flex; /* Используйте Flexbox для центрирования содержимого */
+      justify-content: center; /* Горизонтальное центрирование содержимого */
+      align-items: center; /* Вертикальное центрирование содержимого */
+    
+     font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+     font-size: 40px; /* Размер шрифта */
+     font-weight: bold; /* Жирное начертание */
+     color: #000000; /* Цвет текста */
+    
+    
+    
+     padding-left: 5px; /* Отступ слева */
+      }
+    
+      .menu9-rectangle{
+        width: 30vw; /* Ширина поля для ввода */
+        height: 10vh; /* Высота поля для ввода */
+        top: 9%; /* Позиционирование по вертикали */
+        left: 83%; /* Позиционирование по горизонтали */
+        position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+        transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+        display: flex; /* Используйте Flexbox для центрирования содержимого */
+        justify-content: center; /* Горизонтальное центрирование содержимого */
+        align-items: center; /* Вертикальное центрирование содержимого */
+        }
+    
+    
+    #chat-window {
+      width: 58vw;
+      height: 55vh;
+      top: 50%;
+      left: 36%;
+      font-size: 18px;
+      border-radius: 15px;
+      background: linear-gradient(to right, #c1f6ff, #83d2ff);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-y: scroll; /* Добавленное свойство для создания ползунка прокрутки */
+      padding: 10px;
+    }
+    
+    
+/* Основной стиль сообщения */
+.message {
+  background-color: #ffffff; /* Белый фон */
+  border-radius: 16px; /* Округление углов */
+  padding: 10px 15px; /* Внутренние отступы */
+  margin-bottom: 10px; /* Отступ снизу */
+  word-wrap: break-word; /* Перенос длинных слов */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для эффекта подъема */
+  max-width: 80%; /* Ограничение ширины сообщения */
+  position: relative; /* Для позиционирования стрелок */
+  font-family: 'Roboto', sans-serif; /* Шрифт сообщения */
+  line-height: 1.5; /* Интерлиньяж */
+  display: flex; /* Используем flexbox для размещения текста и аватара */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  overflow-wrap: break-word; /* Перенос длинных слов и строк */
+  word-break: break-word; /* Перенос длинных слов */
+}
+
+/* Стиль для входящих сообщений */
+.message.incoming {
+  background-color: #f1f1f1; /* Светло-серый фон для входящих сообщений */
+  border-bottom-left-radius: 0; /* Убрать нижний левый угол */
+  border-top-right-radius: 16px; /* Оставить округление верхнего правого угла */
+  align-self: flex-start; /* Выравнивание по левому краю */
+}
+
+/* Стиль для исходящих сообщений */
+.message.outgoing {
+  background-color: #007aff; /* Синий фон для исходящих сообщений */
+  color: #ffffff; /* Белый текст для исходящих сообщений */
+  border-bottom-right-radius: 0; /* Убрать нижний правый угол */
+  border-top-left-radius: 16px; /* Оставить округление верхнего левого угла */
+  align-self: flex-end; /* Выравнивание по правому краю */
+}
+
+/* Стиль стрелок сообщений */
+.message::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+}
+
+.message.incoming::before {
+  left: -15px;
+  border-right: 15px solid #f1f1f1; /* Цвет стрелки для входящих сообщений */
+  border-left: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.message.outgoing::before {
+  right: -15px;
+  border-left: 15px solid #007aff; /* Цвет стрелки для исходящих сообщений */
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
