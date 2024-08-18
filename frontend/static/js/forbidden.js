@@ -24,10 +24,10 @@ document.addEventListener('contextmenu', function(event) {
 });
 
 // Блокировка F12
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'F12') {
-      event.preventDefault();
-      return false;
-  }
-});
+//document.addEventListener('keydown', function(event) {
+//  if (event.key === 'F12') {
+//      event.preventDefault();
+//      return false;
+//  }
+//});
 

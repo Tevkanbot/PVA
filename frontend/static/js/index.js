@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Проверка наличия eel
     if (typeof eel === 'undefined') {
-        console.error('Eel is not defined. Make sure eel.js is loaded correctly.');
         return;
     }
 
-    // Все элементы загружены и отображаются
+    // Список элементов, которые должны быть видимыми
     const elementsToCheck = [
         'menu1-rectangle',
         'imageButton',
@@ -22,57 +20,60 @@ document.addEventListener('DOMContentLoaded', function() {
         const element = document.getElementById(id);
         if (element) {
             element.style.display = 'block';
+        } else {
+            console.error(`Element with id '${id}' not found.`);
         }
     });
 
-    // Обработчики событий
     const button = document.getElementById('imageButton');
     const image = document.getElementById('image');
     const imageButton2 = document.getElementById('imageButton2');
-
+    
     if (button && image) {
         let previousImageSource = image.src;
-
+    
         button.addEventListener('click', function() {
             if (image.src.endsWith('True_m.png')) {
-                image.src = 'web/Folse_m.png';
+                image.src = 'web/False_m.png'; // Исправлена опечатка
                 previousImageSource = 'web/True_m.png';
-                eel.toggle_sound('Выключение звука')();
+                eel.toggle_sound('Выключение звука') // Удалил .then и .catch, так как сообщения об ошибке не нужны
             } else {
                 image.src = previousImageSource;
-                eel.toggle_sound('Включение звука')();
+                eel.toggle_sound('Включение звука') // Удалил .then и .catch, так как сообщения об ошибке не нужны
             }
         });
     }
-
+    
     let microphoneState = true;
-
+    
     function toggleMicrophone() {
         const image2 = document.getElementById('image2');
         if (imageButton2 && image2) {
             if (microphoneState) {
-                image2.src = 'web/Folse_micro.png';
+                image2.src = 'web/False_micro.png';
             } else {
                 image2.src = 'web/True_micro.png';
             }
             microphoneState = !microphoneState;
-            eel.enableMicrophone(microphoneState)();
+            
+            eel.enableMicrophone(microphoneState) // Удалил .then и .catch, так как сообщения об ошибке не нужны
         }
     }
-
+    
     if (imageButton2) {
         imageButton2.addEventListener('click', toggleMicrophone);
     }
 
-    // Вызов функции для отправки сообщения после загрузки страницы
-    eel.on_load();  // вызов функции после загрузки страницы
+    eel.on_load(); // вызов функции после загрузки страницы   
+    eel.main();
 });
 
-// Экспонируем функцию display_message_in_chat для использования в Python
+eel.expose(display_message_in_chat);
+
 function display_message_in_chat(message) {
     const messageBox = document.getElementById('message-box');
     if (!messageBox) {
-        console.error('Message box element not found');
+        console.error("Message box not found.");
         return;
     }
 
@@ -80,8 +81,5 @@ function display_message_in_chat(message) {
     newMessage.textContent = message;
     newMessage.className = 'message';
     messageBox.appendChild(newMessage);
-    messageBox.scrollTop = messageBox.scrollHeight;
+    messageBox.scrollTop = messageBox.scrollHeight; // Немедленно прокручиваем до конца
 }
-
-// Убедитесь, что эта строка не вызывает ошибок
-eel.expose(display_message_in_chat);
