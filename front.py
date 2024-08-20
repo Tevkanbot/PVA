@@ -14,6 +14,7 @@ project_root = Path(__file__).resolve().parent.parent
 web_dir = project_root / 'PVA' / 'frontend' / 'static'
 eel.init(web_dir.as_posix())
 
+end1, end2 = multiprocessing.Pipe()
 
 class Front:
     @staticmethod
@@ -101,7 +102,7 @@ def search_and_send_message():
         eel.display_message_in_chat(data)   
 
 if __name__ == "__main__":
-    end1, end2 = multiprocessing.Pipe()
+
 
     process_3 = multiprocessing.Process(target=Front.start_app)
     process_3.start()

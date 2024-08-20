@@ -16,7 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
         'menu9-rectangle'
     ];
 
-    elementsToCheck.forEach(id => {
+eel.on_load(); // вызов функции после загрузки страницы
+function infiniteLoopFunction() {// Функция, которая будет выполняться в бесконечном цикле
+    eel.search_and_send_message();
+    
+    requestAnimationFrame(infiniteLoopFunction);// Запрашиваем следующий кадр
+  }
+  requestAnimationFrame(infiniteLoopFunction);// Запускаем функцию
+
+  function otherFunction() {// Эта функция тоже может работать одновременно
+        elementsToCheck.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
             element.style.display = 'block';
@@ -28,10 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('imageButton');
     const image = document.getElementById('image');
     const imageButton2 = document.getElementById('imageButton2');
-    
     if (button && image) {
         let previousImageSource = image.src;
-    
         button.addEventListener('click', function() {
             if (image.src.endsWith('True_m.png')) {
                 image.src = 'web/False_m.png'; // Исправлена опечатка
@@ -42,10 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 eel.toggle_sound('Включение звука') // Удалил .then и .catch, так как сообщения об ошибке не нужны
             }
         });
-    }
-    
-    let microphoneState = true;
-    
+    } 
+    let microphoneState = true;   
     function toggleMicrophone() {
         const image2 = document.getElementById('image2');
         if (imageButton2 && image2) {
@@ -59,16 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
             eel.enableMicrophone(microphoneState) // Удалил .then и .catch, так как сообщения об ошибке не нужны
         }
     }
-    
     if (imageButton2) {
         imageButton2.addEventListener('click', toggleMicrophone);
-    }
+    }  
+  }
+  otherFunction(); // Вызов другой функции
 
-    eel.on_load(); // вызов функции после загрузки страницы   
-    
+
 });
-
-eel.expose(display_message_in_chat);
 
 function display_message_in_chat(message) {
     const messageBox = document.getElementById('message-box');
@@ -83,3 +86,4 @@ function display_message_in_chat(message) {
     messageBox.appendChild(newMessage);
     messageBox.scrollTop = messageBox.scrollHeight; // Немедленно прокручиваем до конца
 }
+eel.expose(display_message_in_chat);
