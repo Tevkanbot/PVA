@@ -1,213 +1,172 @@
-document.getElementById('backButton2').style.display = 'none';
-document.getElementById('saveButton2').style.display = 'none';
-document.getElementById('saveButton').style.display = 'none';
+document.addEventListener('DOMContentLoaded', function() {
+    const nameInput = document.getElementById('nameInput');
+    const nextButton = document.getElementById('nextButton');
+    const secondRectangle = document.getElementById('secondRectangle');
+    const thirdRectangle = document.getElementById('thirdRectangle');
+    const inner6Rectangle = document.getElementById('inner6-rectangle');
+    const box_text1 = document.getElementById('box_text1');
+    const box_text2 = document.getElementById('box_text2');
+    const box_text3 = document.getElementById('box_text3');
+    const box_text4 = document.getElementById('box_text4');
+    const Button_Politics = document.getElementById('Button_Politics');      
+    const box_text_Politics = document.getElementById('box_text_Politics');
+    const toggleSwitch = document.querySelector('.toggle-switch');
+    const box_text_Confirmation = document.getElementById('box_text_Confirmation');
+    const Button_Politics1_Back = document.getElementById('Button_Politics1_Back');
 
-document.getElementById('forwardButton2').addEventListener('click', function() {
-eel.forward_button_pressed();  // Вызов функции Python
-});
+    // Скрываем кнопки и блоки при загрузке страницы
+    nextButton.style.display = 'none';
+    secondRectangle.style.display = 'none';
+    thirdRectangle.style.display = 'none';
+    inner6Rectangle.style.display = 'none';
+    nameInput.style.display = 'none'; 
+    Button_Politics.style.display = 'none';
+    box_text_Politics.style.display = 'none';
+    toggleSwitch.style.display = 'none';
+    box_text_Confirmation.style.display = 'none';
+    Button_Politics1_Back.style.display = 'none';
 
-
-document.getElementById('saveButton2').addEventListener('click', function() {
-var input_value_12 = document.getElementById('inputField2').value.trim();
-var input_value_22 = document.getElementById('newInputField2').value.trim();
-
-if(input_value_12 || input_value_22) {
-    // Отправить данные на сервер
-    eel.saveData2(input_value_12, input_value_22)()
-        .then(() => {
-            // Очистить поля ввода
-            document.getElementById('inputField2').value = '';
-            document.getElementById('newInputField2').value = '';
-        });
-}
-
-
-});
-eel.expose(saveData2);
-function saveData2(input_value_12, input_value_22) {   
-console.log('input_value_12:', input_value_12);
-console.log('input_value_22:', input_value_22);
-
-}
-
-
-
-function handleForwardButton2() {
-        document.getElementById('inner6-rectangle').style.display = 'none';
-        document.getElementById('inputField').style.display = 'none';
-        document.getElementById('newInputField').style.display = 'none';
-        document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добро пожаловать!';
-        document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('saveButton').style.display = 'none';
-        document.getElementById('backButton').style.display = 'none';
-        document.getElementById('forwardButton').style.display = 'none';
-        document.getElementById('inner7-rectangle').style.display = 'none'; // Показываем прямоугольник с id inner7-rectangle
-        document.getElementById('inner8-rectangle').style.display = 'none';
-        document.getElementById('inner9-rectangle').style.display = 'none';
-        document.getElementById('forwardButton2').style.display = 'none';
-        document.getElementById('inner10-rectangle').style.display = 'none';
-        document.getElementById('inner-rectangle1').style.display = 'none';
-        document.getElementById('innerRectangle').style.display = 'none';
-        document.getElementById('secondRectangle').style.display = 'none';
-        document.getElementById('inner22-rectangle').style.display = 'none';
-        document.getElementById('nameInput').value = '';
-        document.getElementById('nameInput').style.display = 'none';
-        document.getElementById('thirdRectangle').style.display = 'none';
-        // сверху уборка старых объектов
-        // появление новых объектов
-        window.location.replace('index.html');
-
-
-    }
-
-
-function handleBackButton2() {
-        document.getElementById('inner6-rectangle').style.display = 'none';
-        document.getElementById('inputField').style.display = 'none';
-        document.getElementById('newInputField').style.display = 'none';
-        document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добро пожаловать!';
-        document.getElementById('backButton').style.display = 'block';
-        document.getElementById('saveButton').style.display = 'none';
-        document.getElementById('forwardButton2').style.display = 'block';
-        document.getElementById('backButton2').style.display = 'none';
-        document.getElementById('inputField2').style.display = 'none';
-        document.getElementById('newInputField2').style.display = 'none';
-        document.getElementById('saveButton2').style.display = 'none';
-    }
-
-document.getElementById('saveButton').style.display = 'none';
-document.getElementById('inner8-rectangle').addEventListener('click', function() {
-var name = document.getElementById('nameInput').value;
-if(name.trim()) {
-    document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добавление сайтов!';
-    document.getElementById('inner6-rectangle').style.display = 'block';
-    document.getElementById('inputField2').style.display = 'block';
-    document.getElementById('newInputField2').style.display = 'block';
-    document.getElementById('saveButton2').style.display = 'block';
-    document.getElementById('forwardButton').style.display = 'none';
-    document.getElementById('backButton2').style.display = 'block';
-    document.getElementById('forwardButton2').style.display = 'none';
-}
-});
-
-
-function handleForwardButton() {
-        document.getElementById('inner6-rectangle').style.display = 'none';
-        document.getElementById('inputField').style.display = 'none';
-        document.getElementById('newInputField').style.display = 'none';
-        document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добро пожаловать!';
-        document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('saveButton').style.display = 'none';
-        document.getElementById('backButton').style.display = 'none';
-        document.getElementById('forwardButton').style.display = 'none';
-        document.getElementById('inner7-rectangle').style.display = 'block'; // Показываем прямоугольник с id inner7-rectangle
-        document.getElementById('inner8-rectangle').style.display = 'block';
-        document.getElementById('inner9-rectangle').style.display = 'block';
-        document.getElementById('forwardButton').style.display = 'none';
-
-        
-    }
-
+    window.onload = function() {
+        const centerWindow = () => {
+            // Получаем размеры экрана
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
+            // Устанавливаем размеры окна
+            const width = 400;
+            const height = 450;
+            // Вычисляем позицию окна
+            const left = (screenWidth - width) / 2;
+            const top = (screenHeight - height) / 2;
+            // Устанавливаем размеры и позицию окна
+            window.resizeTo(width, height);
+            window.moveTo(left, top);
+        };
+        // Устанавливаем окно по центру при загрузке и при изменении размеров
+        centerWindow();
+        window.onresize = centerWindow;
+    };
     
-document.getElementById('saveButton').addEventListener('click', function() {
-var input_value_1 = document.getElementById('inputField').value.trim();
-var input_value_2 = document.getElementById('newInputField').value.trim();
+    // Функция для показа блоков поочередно
+    function showBoxesSequentially() {
+        // Показываем первый блок
+        box_text1.style.display = 'block';
+        box_text2.style.display = 'none';
+        box_text3.style.display = 'none';
+        box_text4.style.display = 'none';
 
-if(input_value_1 || input_value_2) {
-    // Отправить данные на сервер
-    eel.saveData(input_value_1, input_value_2)()
-        .then(() => {
-            // Очистить поля ввода
-            document.getElementById('inputField').value = '';
-            document.getElementById('newInputField').value = '';
-        });
-}
+        // Задержка перед показом второго блока
+        setTimeout(() => {
+            box_text1.style.display = 'none';
+            box_text2.style.display = 'block';
+            box_text3.style.display = 'none';
 
+            setTimeout(() => {
+                box_text2.style.display = 'none';
+                box_text3.style.display = 'block';
 
-});
+                setTimeout(() => {
+                    box_text3.style.display = 'none';
+                    box_text4.style.display = 'block';
+                    Button_Politics.style.display = 'block';
+                }, 1000); // Задержка перед показом четвёртого блока
 
-eel.expose(saveData);
-function saveData(input_value_1, input_value_2) {   
-console.log('input_value_1:', input_value_1);
-console.log('input_value_2:', input_value_2);
-}
+            }, 1000); // Задержка перед показом третьего блока
 
+        }, 1000); // Задержка перед показом второго блока
+    } 
+    showBoxesSequentially();
 
+    // Кнопка перенос на политику к.
+    document.getElementById('Button_Politics').addEventListener('click', function() {
+        box_text1.style.display = 'none';
+        box_text2.style.display = 'none';
+        box_text3.style.display = 'none';
+        box_text4.style.display = 'none';
+        Button_Politics.style.display = 'none'; 
+        box_text_Politics.style.display = 'block';    
+        toggleSwitch.style.display = 'block';      
+        box_text_Confirmation.style.display = 'block';
+        box_text_Confirmation.style.display = 'block';
 
-
-
-document.getElementById('saveButton').style.display = 'none';
-document.getElementById('innerRectangle').addEventListener('click', function() {
-var name = document.getElementById('nameInput').value;
-if(name.trim()) {
-    document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добавление приложений!';
-    document.getElementById('inner6-rectangle').style.display = 'block';
-    document.getElementById('inputField').style.display = 'block';
-    document.getElementById('newInputField').style.display = 'block';
-    document.getElementById('saveButton').style.display = 'block';
-    document.getElementById('forwardButton').style.display = 'none';
-}
-});
-
-
-document.getElementById('nameInput').addEventListener('input', function() {
-    var name = this.value;
-    if(name.trim()) {  // Если что-то введено и это не пробелы, показываем кнопку
-        document.getElementById('nextButton').style.display = 'block';
-    } else {  // Если поле пустое или содержит только пробелы, скрываем кнопку
-        document.getElementById('nextButton').style.display = 'none';
-    }
-});
-document.getElementById('innerRectangle').addEventListener('click', function() {
-var name = document.getElementById('nameInput').value;
-if(name.trim()) {
-    document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добавление приложений!';
-    document.getElementById('inner6-rectangle').style.display = 'block';
-    document.getElementById('inputField').style.display = 'block';
-    document.getElementById('newInputField').style.display = 'block';
-    document.getElementById('saveButton').style.display = 'block';
-    
-}
-});
-
-document.getElementById('newInputField').addEventListener('input', function() {
-        // Здесь можно добавить функционал, аналогичный существующему inputField
     });
 
-    function handleBackButton() {
-        document.getElementById('inner6-rectangle').style.display = 'none';
-        document.getElementById('inputField').style.display = 'none';
-        document.getElementById('newInputField').style.display = 'none';
-        document.querySelector('.inner-rectangle .welcome-text').textContent = 'Добро пожаловать!';
-        document.getElementById('backButton').style.display = 'block';
-        document.getElementById('saveButton').style.display = 'none';
-        document.getElementById('forwardButton').style.display = 'block';
+// Переключатель, согласие на обработку п.д.
+let isHidden = false; // Переменная для отслеживания состояния видимости
+toggleSwitch.addEventListener('click', () => {
+    if (isHidden) {
+        box_text_Confirmation.style.display = 'block'; // Показываем элемент
+        Button_Politics1_Back.style.display = 'none';
         
+    } else {
+        box_text_Confirmation.style.display = 'none'; // Скрываем элемент
+        Button_Politics1_Back.style.display = 'block';
+        eel.toggleSwitch(isHidden)
     }
+    isHidden = !isHidden;// Переключаем состояние видимости
+    toggleSwitch.classList.toggle('active');// Переключаем класс 'active'
+});
+
+// Кнопка назад
+document.getElementById('Button_Politics1_Back').addEventListener('click', function() {
+    box_text_Politics.style.display = 'none';    
+    toggleSwitch.style.display = 'none';      
+    box_text_Confirmation.style.display = 'none';
+    Button_Politics1_Back.style.display = 'none';
+    nameInput.style.display = 'block';
+});
 
 
-async function showRectangles() {
-    var name = document.getElementById('nameInput').value;
-    if(name.trim()) {
-        await eel.process_name(name); // Предполагаем, что функция process_name определена в Python
-        document.getElementById('innerRectangle').style.display = 'block';
-        document.getElementById('secondRectangle').textContent = 'Добавьте свои приложения!';
-        document.getElementById('secondRectangle').style.display = 'block';
-        document.getElementById('thirdRectangle').textContent = '';
-        document.getElementById('thirdRectangle').style.display = 'block';
-        document.getElementById('nameInput').disabled = true;
-        document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('inputField').style.display = 'none'; // Скрываем строку ввода, если она была показана
-        
+// Функция для изменения размера окна
+function resize_window(width, height) {
+    window.resizeTo(width, height);
 }
 
- 
+// Экспонируем функцию для вызова из Python
+eel.expose(resize_window);
+
+
+    // Проверка при вводе имени
+    nameInput.addEventListener('input', function() {
+        if (nameInput.value.trim()) {
+            nextButton.style.display = 'block';
+        } else {
+            nextButton.style.display = 'none';
+        }
+    });
+
+
+
+
+
+    // Функция для показа прямоугольников
+    async function showRectangles() {
+        var name = nameInput.value;
+        if (name.trim()) {
+            await eel.process_name(name); // Предполагаем, что функция process_name определена в Python
+            secondRectangle.textContent = 'Добавьте свои приложения!';
+            thirdRectangle.textContent = '';
+
+            secondRectangle.style.display = 'block';
+            thirdRectangle.style.display = 'block';
+            inner6Rectangle.style.display = 'block';
+            nameInput.disabled = true;
+            nextButton.style.display = 'none';
+
+            // Анимация для появления второго и третьего прямоугольников
+        
+        }
     }
 
+    // Назначение обработчика на кнопку "Дальше"
+    nextButton.addEventListener('click', showRectangles);
 
-
-// Вызов функции при загрузке страницы для первоначальной проверки
-document.addEventListener('DOMContentLoaded', function() {
-    var name = document.getElementById('nameInput').value;
-    document.getElementById('nextButton').style.display = name.trim() ? 'block' : 'none';
+    // Функция для кнопки "Назад"
+    function handleBackButton() {
+        inner6Rectangle.style.display = 'none';
+        secondRectangle.style.display = 'none';
+        thirdRectangle.style.display = 'none';
+        nameInput.disabled = false;
+        nameInput.value = '';
+        nextButton.style.display = 'none';
+    }
 });

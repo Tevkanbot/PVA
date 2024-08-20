@@ -53,5 +53,28 @@
     <div id="message-box"></div>
 </div>
 
+<script>
+  window.onload = function() {
+      const centerWindow = () => {
+          // Получаем размеры экрана
+          const screenWidth = window.screen.width;
+          const screenHeight = window.screen.height;
+          // Устанавливаем размеры окна
+          const width = 700;
+          const height = 500;
+          // Вычисляем позицию окна
+          const left = (screenWidth - width) / 2;
+          const top = (screenHeight - height) / 2;
+          // Устанавливаем размеры и позицию окна
+          window.resizeTo(width, height);
+          window.moveTo(left, top);
+      };
+      // Устанавливаем окно по центру при загрузке и при изменении размеров
+      centerWindow();
+      window.onresize = centerWindow;
+  };
+</script>
+
+
 </body>
 </html>
