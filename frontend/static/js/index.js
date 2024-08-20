@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     eel.on_load(); // вызов функции после загрузки страницы   
-    eel.main();
+    
 });
 
 eel.expose(display_message_in_chat);
