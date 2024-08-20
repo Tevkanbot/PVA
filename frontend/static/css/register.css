@@ -11,26 +11,6 @@
   justify-content: center;
 }
 
-.inner2-rectangle {
-  width: 22.3vw;
-  height: 50vh;
-  background: linear-gradient(to right, #BDE3FF, #8ae6d2);
-  border-radius: 20px;
-  position: fixed;
-  top: 48%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Calibri', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  color: #000000;
-  text-align: center;
-  padding: 5px;
-}
-
 .inner4-rectangle {
   width: 22vw;
   height: 15vh;
@@ -79,33 +59,255 @@
   z-index: 1000;
 }
 
-.backButton {
-  background-color: #1E1E1E;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+.Namevvod {
+  /* Стили для текстового поля */
+  width: 28vw; /* Ширина поля */
+  height: 35px; /* Высота поля */
+  padding: 5px; /* Внутренние отступы */
+  font-size: 18px; /* Размер шрифта */
+  border-radius: 10px; /* Радиус скругления углов */
+  background: linear-gradient(to right, #114cff, #86a4ff); /* Фоновый градиент */
+  background-size: 200% 100%; /* Размер фона для анимации */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  justify-content: center; /* Горизонтальное выравнивание содержимого */
+  align-items: center; /* Вертикальное выравнивание содержимого */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 75%; /* Вертикальное положение */
+  left: 50%; /* Горизонтальное положение */
+  transform: translate(-50%, -50%); /* Смещение по X и Y */
+  z-index: 10; /* Значение для наложения */
+  animation: gradientShift 4s linear infinite, fadeIn 2s ease-out forwards; /* Анимация градиента и появления */
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Центрирование текста */
+  border: none; /* Убирает рамку */
+  background-color: transparent; /* Прозрачный фон для текста */
+  overflow: hidden; /* Скрытие переполненного содержимого */
+  resize: none; /* Запрет изменения размера текстового поля */
+}
+
+/* Стили для плейсхолдера */
+.Namevvod::placeholder {
+  color: rgba(255, 255, 255, 0.719); /* Цвет текста плейсхолдера */
+  opacity: 1; /* Полная видимость текста плейсхолдера */
 }
 
 
-.Namevvod {
-  width: 23vw; /* Ширина поля для ввода */
-  height: 15vh; /* Высота поля для ввода */
-  padding: 20px; /* Внутренний отступ */
-  top: 83%; /* Позиционирование по вертикали */
-  left: 20%; /* Позиционирование по горизонтали */
-  
+
+.box_text {
+  width: 100%; /* Ширина контейнера */
+  max-width: 800px; /* Максимальная ширина контейнера */
+  padding: 20px; /* Внутренние отступы контейнера */
+  box-sizing: border-box; /* Учитываем отступы и границы в расчете ширины */
+  background-color: #1E1E1E; /* #1E1E1E Фоновый цвет прямоугольника */
+  border-radius: 10px; /* Закругление углов */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  flex-direction: column; /* Вертикальное расположение текста и кнопки */
+  align-items: center; /* Горизонтальное выравнивание содержимого */
+  justify-content: center; /* Вертикальное выравнивание содержимого */
+  margin: 0 auto; /* Центрируем контейнер по горизонтали */
+}
+/* #1E1E1E Фоновый цвет прямоугольника */
+body {
+  margin: 0; /* Убираем отступы по краям страницы */
+  padding: 0; /* Убираем внутренние отступы у body */
+  display: flex; /* Используем flexbox для центрирования контейнера */
+  justify-content: center; /* Центрируем контейнер по горизонтали */
+  align-items: center; /* Центрируем контейнер по вертикали */
+  height: 100vh; /* Устанавливаем высоту body равной высоте экрана */
+  background-color: #000; /* Устанавливаем черный фон */
+}
+
+p {
+  animation: fadeIn 2s ease-in forwards, fadeOut 2s ease-out 3s forwards; /* Анимация появления и исчезновения текста */
+}
+
+.text {
+  font-family: 'Calibri', sans-serif;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0; /* Скрытый текст по умолчанию */
+  transition: opacity 1s ease-in-out; /* Плавное изменение opacity */
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Начало анимации — текст невидим */
+  }
+  100% {
+    opacity: 1; /* Конец анимации — текст полностью видим */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Начало анимации — текст полностью видим */
+  }
+  100% {
+    opacity: 0; /* Конец анимации — текст становится невидимым */
+  }
+}
+
+/* Анимация box_text4 начало */
+
+
+.Button_Politics {
+  width: 40vw; /* Ширина кнопки */
+  height: 15vh; /* Высота кнопки */
+  padding: 20px; /* Внутренние отступы */
   font-size: 18px; /* Размер шрифта */
   border-radius: 15px; /* Радиус скругления углов */
-  border: 1px solid #ccc; /* Тонкая серая рамка */
-  background: linear-gradient(to right, #BDE3FF, #8ae6d2); /* Переливающийся фон */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
-  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  background: linear-gradient(to right, #325ddf, #86a4ff); /* Начальный градиент */
+  background-size: 200% 100%; /* Размер фона для анимации */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  justify-content: center; /* Горизонтальное выравнивание содержимого */
+  align-items: center; /* Вертикальное выравнивание содержимого */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 75%;
+  left: 21.5%;
+  transform: translate(20%, -50%); /* Смещение по X и Y */
+  z-index: 10; /* Значение для наложения */
+  animation: gradientShift 4s linear infinite, fadeIn 2s ease-out forwards; /* Анимация градиента и появления */
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Центрирование текста */
+}
   
-  transform: translate(-50%, -50%); /* Смещение для точного центрирования */
-  display: flex; /* Используйте Flexbox для центрирования содержимого */
-  justify-content: center; /* Горизонтальное центрирование содержимого */
-  align-items: center; /* Вертикальное центрирование содержимого */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%; /* Начальная позиция градиента */
   }
+  50% {
+    background-position: 100% 0%; /* Положение градиента в середине анимации */
+  }
+  100% {
+    background-position: 0% 0%; /* Финальная позиция градиента (возвращается к начальной) */
+  }
+}
+
+
+
+.box_text_Politics {
+  width: 98%; /* Ширина контейнера */
+  max-width: 800px; /* Максимальная ширина контейнера */
+  height: 335px; /* Фиксированная высота контейнера */
+  padding: 5px; /* Внутренние отступы контейнера */
+  box-sizing: border-box; /* Учитываем отступы и границы в расчете ширины */
+  background-color: #1E1E1E; /* Фоновый цвет прямоугольника */
+  border: 2px solid white; /* Широкая белая рамка */
+  border-radius: 10px; /* Закругление углов */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  flex-direction: column; /* Вертикальное расположение текста и кнопки */
+  align-items: center; /* Горизонтальное выравнивание содержимого */
+  justify-content: center; /* Вертикальное выравнивание содержимого */
+  color: white; /* Цвет текста белый */
+  font-size: 18px; /* Размер шрифта текста */
+  font-family: Calibri, sans-serif; /* Шрифт Calibri, запасной шрифт sans-serif */
+  overflow: auto; /* Добавляет ползунки прокрутки внутри контейнера */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 3px; /* Расположение от верхнего края родительского контейнера */
+}
+
+/* Стили для переключателя */
+.toggle-switch {
+  width: 60px; /* Ширина переключателя */
+  height: 30px; /* Высота переключателя */
+  background-color: #ffffff00; /* Цвет фона переключателя */
+  border: 2px solid white; /* Широкая белая рамка */
+  border-radius: 15px; /* Закругление углов переключателя */
+  position: fixed; /* Фиксированное позиционирование */
+  cursor: pointer; /* Курсор указателя при наведении */
+  transition: background-color 0.3s, left 0.3s, top 0.3s; /* Плавный переход для фона и перемещения */
+  
+  /* Позиционирование переключателя (измените значения по вашему усмотрению) */
+  top: 360px; /* Расположение от верхнего края окна просмотра */
+  left: 317px; /* Расположение от левого края окна просмотра */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  position: absolute; /* Абсолютное позиционирование */
+}
+
+/* Псевдоэлемент для точки переключателя */
+.toggle-switch::before {
+  content: '';
+  width: 26px; /* Ширина точки */
+  height: 26px; /* Высота точки */
+  background-color: white; /* Цвет точки */
+  border-radius: 50%; /* Округлая форма точки */
+  position: absolute; /* Абсолютное позиционирование внутри переключателя */
+  top: 2px; /* Отступ от верхнего края переключателя */
+  left: 2px; /* Начальное положение точки */
+  transition: left 0.3s; /* Плавный переход при перемещении точки */
+}
+
+/* Стили для переключателя в активном состоянии */
+.toggle-switch.active {
+  background: linear-gradient(to right, #325ddf, #a9beff); /* Цвет фона переключателя в активном состоянии */
+  border: 2px solid #1E1E1E; /* Широкая белая рамка */
+}
+
+.toggle-switch.active::before {
+  left: calc(100% - 28px); /* Перемещает точку вправо при активном состоянии */
+}
+
+
+.box_text_Confirmation {
+  width: 57%; /* Ширина контейнера */
+  max-width: 800px; /* Максимальная ширина контейнера */
+  height: 50px; /* Фиксированная высота контейнера */
+  padding: 5px; /* Внутренние отступы контейнера */
+  box-sizing: border-box; /* Учитываем отступы и границы в расчете ширины */
+  background-color: #1E1E1E; /* Фоновый цвет прямоугольника */
+  border-radius: 10px; /* Закругление углов */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  flex-direction: column; /* Вертикальное расположение текста и кнопки */
+  align-items: center; /* Горизонтальное выравнивание содержимого */
+  justify-content: center; /* Вертикальное выравнивание содержимого */
+  color: rgb(182, 182, 182); /* Цвет текста белый */
+  font-size: 18px; /* Размер шрифта текста */
+  font-family: Calibri, sans-serif; /* Шрифт Calibri, запасной шрифт sans-serif */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 347px; /* Расположение от верхнего края окна просмотра */
+  left: 95px; /* Расположение от левого края окна просмотра */
+}
+
+
+.Button_Politics1_Back {
+  width: 22vw; /* Ширина кнопки */
+  height: 35px; /* Высота кнопки */
+  padding: 5px; /* Внутренние отступы */
+  font-size: 18px; /* Размер шрифта */
+  border-radius: 14px; /* Радиус скругления углов */
+  background: linear-gradient(to right, #114cff, #86a4ff); /* Начальный градиент */
+  background-size: 200% 100%; /* Размер фона для анимации */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  justify-content: center; /* Горизонтальное выравнивание содержимого */
+  align-items: center; /* Вертикальное выравнивание содержимого */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 92%;
+  left: 16%;
+  transform: translate(-50%, -50%); /* Смещение по X и Y */
+  z-index: 10; /* Значение для наложения */
+  animation: gradientShift 4s linear infinite, fadeIn 1s ease-out forwards; /* Анимация градиента и появления */
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Центрирование текста */
+}
+
+.box_text {
+  width: 100%; /* Ширина контейнера */
+  max-width: 800px; /* Максимальная ширина контейнера */
+  padding: 20px; /* Внутренние отступы контейнера */
+  box-sizing: border-box; /* Учитываем отступы и границы в расчете ширины */
+  background-color: #1E1E1E; /* #1E1E1E Фоновый цвет прямоугольника */
+  border-radius: 10px; /* Закругление углов */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  flex-direction: column; /* Вертикальное расположение текста и кнопки */
+  align-items: center; /* Горизонтальное выравнивание содержимого */
+  justify-content: center; /* Вертикальное выравнивание содержимого */
+  margin: 0 auto; /* Центрируем контейнер по горизонтали */
+}

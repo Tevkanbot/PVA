@@ -1,50 +1,61 @@
-<DOCTYPE html>
-    <html>
-    <head>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
     <title>КЛЕЙ</title>
     <script src="js/register.js"></script>
     <script src="js/forbidden.js" defer></script>
     <script type="text/javascript" src="/eel.js"></script>
     <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/rectangleAnimation.css">
     
-    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="web/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="web/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="web/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="web/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="web/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="web/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="web/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="web/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="web/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="web/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="web/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="web/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="web/favicon-16x16.png">
+    <link rel="manifest" href="web/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="web/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    </head>
+</head>
+<body style="background-color:#1E1E1E"> <!-- Фон -->
 
-    <body style="background-color:#1E1E1E"> <!-- Фон -->
-
-    <div class="rectangle">
-        <div class="inner2-rectangle" id="inner22-rectangle">
-            Давайте знакомиться! Меня зовут КЛЕЙ, введите, как к вам обращаться и скажите ПРИВЕТ
-        </div>
-    </div>
     <input type="text" id="nameInput" class="Namevvod" placeholder="Введите имя">
     <button id="nextButton" style="display:none;" onclick="showRectangles()">Дальше</button>
-
 
     <div id="secondRectangle" class="inner4-rectangle" style="display:none;"></div> <!-- Второй прямоугольник -->
     <div id="thirdRectangle" class="inner5-rectangle" style="display:none;"></div> <!-- Третий прямоугольник -->
     <div id="inner6-rectangle" class="inner6-rectangle" style="display:none;">
-        <button id="backButton" class="backButton" onclick="handleBackButton()">Назад</button>
     </div>
 
-
-    </body>
-    </html>
-    
+    <div class="box_text" id="box_text1">
+    <p class="text">Добро пожаловать!</p>
+      </div>
+    <div class="box_text" id="box_text2">
+    <p class="text">Я PVA - Personal Voice Assistant</p>
+        </div>
+    <div class="box_text" id="box_text3">
+    <p class="text">Прошу вас зарегистрироваться, чтобы начать</p>
+        </div>
+        <div class="box_text" id="box_text4">
+            <p class="text">Прочитайте нашу лицензию</p>
+                </div>
+        <button id="Button_Politics" class="Button_Politics">Прочитать</button>
+        <div class="box_text_Politics" id="box_text_Politics">Привет как дела хочу спросить хватит зачем давай</div>
+        <div class="toggle-switch"></div>
+        <div class="box_text_Confirmation" id="box_text_Confirmation">Я согласен с лицензей</div>
+        <button id="Button_Politics1_Back" class="Button_Politics1_Back">Назад</button>
+        <!-- <div class="box_text5" id="box_text5">
+            <class="text">Напишите имя</p>
+        </div> -->
+</body>
+</html>
