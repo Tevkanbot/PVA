@@ -25,7 +25,7 @@ class Data:
         file_path = os.path.join(Data.script_dir, "backend", "jsons", "triggers_and_commands.json")
         
         with open(file_path, "w", encoding="utf-8") as file:
-            json.dump(data, file)
+            json.dump(data, file, indent=4, sort_keys=True)
         
         return True
     
@@ -48,7 +48,7 @@ class Data:
         file_path = os.path.join(Data.script_dir, "backend", "jsons", "app_data.json")
         
         with open(file_path, "w", encoding="utf-8") as file:
-            json.dump(data, file)
+            json.dump(data, file, indent=4, sort_keys=True)
         
         return True
     

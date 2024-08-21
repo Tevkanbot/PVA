@@ -5,14 +5,24 @@
         "пауза",
         "погромче",
         "потише",
-        "громкость"
+        "громкость",
+        "открой",
+        "закрой"
     ],
     "two_word_triggers": [
         "открой браузер",
         "закрой браузер",
-        "открой powerpoint",
-        "закрой powerpoint",
         "сверни окна"
+    ],
+    "three_word_triggers": [
+        "первое второе третье",
+        "придумай красивую историю"
+        
+    ],
+    "four_word_triggers": [
+        "первое второе третье четвёртое ",
+        "назови всё число пи"
+
     ],
     "one_word_actions": {
         "стоп": {
@@ -42,12 +52,12 @@
     },
     "two_word_actions": {
         "открой браузер": {
-            "command": "Apps.browser.open(num)",
+            "command": "Apps.Browser.open(num)",
             "num": false
 
         },
         "закрой браузер": {
-            "command": "Apps.browser.close(num)",
+            "command": "Apps.Browser.close(num)",
             "num": false
         },
         "сверни окна": {
@@ -63,5 +73,5 @@
             "num": false
         }
     }
-
+    
 }

@@ -1,1 +1,40 @@
-{"name": "\u0438\u0432\u0430\u043d", "apps": {"\u0444\u044b\u0432": "\u0444\u044b\u0432", "123": "123", "\u043f\u043f\u043f": "\u0430\u0430\u0430"}, "websites": {"\u044e\u0442\u0443\u0431": "www///", "11": "11"}}
+{
+    "app": {
+        "adobe photoshop 2020": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Adobe Photoshop 2020.lnk",
+        "anydesk": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\AnyDesk.exe",
+        "autodesk fusion": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Autodesk Fusion.lnk",
+        "blender 3000": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Blender 3.0.0.0.lnk",
+        "capcut": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\CapCut.lnk",
+        "cave crawlers": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Cave Crawlers.url",
+        "content warning": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Content Warning.url",
+        "deceit": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Deceit.url",
+        "deep rock galactic": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Deep Rock Galactic.url",
+        "discord": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Discord.lnk",
+        "godot v412stable win64": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Godot_v4.1.2-stable_win64.exe",
+        "muck": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Muck.url",
+        "powerpoint 2016": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\PowerPoint 2016.lnk",
+        "pycharm64": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\pycharm64.exe.lnk",
+        "skype": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Skype.lnk",
+        "telegram": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Telegram.lnk",
+        "the forest": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\The Forest.url",
+        "tlauncher": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\TLauncher.lnk",
+        "unreal engine": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Unreal Engine.lnk",
+        "valheim": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Valheim.url",
+        "viber": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Viber.lnk",
+        "visual studio 2022": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Visual Studio 2022.lnk",
+        "visual studio code": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Visual Studio Code.lnk",
+        "war thunder": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\War Thunder.url",
+        "zoom ": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\Zoom_cm_fo42lnktZ9vvrZo4_moQuQon0gTzWytkD9vIQ-wwzR4QemwsPgJ4Q@G7oImASFYv94qoRT_k15a862438af798f9_.exe",
+        "\u043a\u043b\u0435\u0442\u044c \u0434\u0435\u043c\u043e": "C:\\Users\\\u0414\u043c\u0438\u0442\u0440\u0438\u0439\\Desktop\\\u041a\u041b\u0415\u0422\u042c \u0414\u0435\u043c\u043e.url"
+    },
+    "apps": {
+        "123": "123",
+        "\u043f\u043f\u043f": "\u0430\u0430\u0430",
+        "\u0444\u044b\u0432": "\u0444\u044b\u0432"
+    },
+    "name": "\u0438\u0432\u0430\u043d",
+    "websites": {
+        "11": "11",
+        "\u044e\u0442\u0443\u0431": "www///"
+    }
+}
