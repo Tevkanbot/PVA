@@ -30,7 +30,7 @@ class Audio:  # Работа со звуком
         pyautogui.press('playpause')
 
 
-class Apps:  # работа с браузером
+class Apps: 
 
     class Search_File:
         
@@ -69,16 +69,19 @@ class Apps:  # работа с браузером
             shortcuts = {}
 
             for filename in os.listdir(desktop_path):
-                if filename.endswith(".lnk") or filename.endswith(".exe") or filename.endswith(".url"):
+                if filename.endswith(".lnk") or filename.endswith(".exe") or filename.endswith(".url"):\
+                
                     shortcut_path = os.path.join(desktop_path, filename)
                     shortcut_name = os.path.splitext(filename)[0]
+
                     shortcuts[shortcut_name] = shortcut_path
 
             values = list(shortcuts.values())
             keys = list(shortcuts.keys())
 
-            #фильтр
+            # фильтр
             for i in range(len(shortcuts)):
+
                 word = keys[i]
                 low = word.lower()
                 rep = low.replace('.','')
@@ -87,7 +90,7 @@ class Apps:  # работа с браузером
                 rep = rep.replace('exe','')
                 rep = rep.replace('(','')
                 rep = rep.replace(')','')
-                rep = rep.replace('cm fo42lnktz9vvrzo4 moquqon0gtzwytkd9viqwwzr4qemwspgj4q@g7oimasfyv94qort k15a862438af798f9 ','')
+                rep = rep.replace(' cm fo42lnktz9vvrzo4 moquqon0gtzwytkd9viqwwzr4qemwspgj4q@g7oimasfyv94qort k15a862438af798f9 ','')
                 keys[i] = rep
                 
                 i=i+1
@@ -120,13 +123,30 @@ class Apps:  # работа с браузером
 
     class Open_Close_App:  # открытие и закрытие преложений
 
-        def open_app(level):
+        def open_apps(phrase):
+            phrase = phrase.split()
 
-            if Apps.Search_File.find_app_path():
-                os.startfile(f"{Apps.Search_File.find_app_path()}")
+            data = Data.load_apps()
+            data = data["app"]
+            keys = data.keys()
+            keys = list(keys)
+            num = 0
 
-            else: 
-                return None
+            for trigger_words in data:
+
+                potential_trigger = trigger_words
+                value = data.get(potential_trigger)
+                trigger_words =  trigger_words.split()
+                trigger_words = set(trigger_words)
+                
+                if  trigger_words.issubset(phrase) != False:
+                    os.startfile(value)
+                    
+                    return("триггер найден")
+                    
+                else:
+                    print("") 
+
 
         def close_app(level):
             os.system(f"taskkill /f /im {Apps.Search_File.find_app_path()}")
@@ -144,5 +164,4 @@ if __name__ == "__main__":
     
 
     print("Список ярлыков сохранен в файл app_data.json")
-
 

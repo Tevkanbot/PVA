@@ -1,5 +1,5 @@
 from .data import Data
-#from commands import Audio, Apps, Desktop
+from .commands import *
 
 
 class Trigger:
@@ -25,12 +25,16 @@ class Trigger:
                 
         
                 for trigger_words in n_word_triggers:
-                    print(trigger_words)
+
+                    potential_trigger = trigger_words
+
                     trigger_words =  trigger_words.split()
                     trigger_words = set(trigger_words)
+
                     if  trigger_words.issubset(phrase) != False:
                         print("триггер найден")
-                        return {"WordCount": trig,"триггер":phrase,"num":num}
+                        return {"WordCount": trig,"trigger":potential_trigger,"num":num}
+                    
                     else:
                         print("триггер не найден")
                         
@@ -39,7 +43,27 @@ class Trigger:
             # Если активационное слово не найдено
             return {"WordCount": 0}
 
+    def find_apps(phrase):
+        phrase = phrase.split()
 
+        data = Data.load_apps()
+        data = data["app"]
+
+        for trigger_words in data:
+
+            potential_trigger = trigger_words
+            value = data.get(potential_trigger)
+            trigger_words =  trigger_words.split()
+            trigger_words = set(trigger_words)
+            
+            if  trigger_words.issubset(phrase) != False:
+                os.startfile(value)
+                
+                return("триггер найден")
+                
+            else:
+                print("") 
+            
 
 
     def search_number(fromSearch, phrase):
@@ -76,12 +100,22 @@ class Trigger:
         trigWord = fromReturn["trigger"]
         
         num = fromReturn["num"]
-        if fromReturn["WordCount"] == 1:
-            exec(data["one_word_actions"][trigWord]["command"])
+        if fromReturn["WordCount"] == "four":
+            exec(data["four_word_actions"][trigWord]["command"])
 
-            print("Запущено:", trigWord, ">>>", data["one_word_actions"][trigWord]["command"])
+            return("Запущено:", trigWord, ">>>", data["four_word_actions"][trigWord]["command"])
 
-        if fromReturn["WordCount"] == 2:
+        if fromReturn["WordCount"] == "three":
+            exec(data["three_word_actions"][trigWord]["command"])
+
+            return("Запущено:", trigWord, ">>>", data["three_word_actions"][trigWord]["command"])
+        
+        if fromReturn["WordCount"] == "two":
             exec(data["two_word_actions"][trigWord]["command"])
 
-            print("Запущено:", trigWord, ">>>", data["two_word_actions"][trigWord]["command"])
+            return("Запущено:", trigWord, ">>>", data["two_word_actions"][trigWord]["command"])
+
+        if fromReturn["WordCount"] == "one":
+            exec(data["one_word_actions"][trigWord]["command"])
+
+            return("Запущено:", trigWord, ">>>", data["one_word_actions"][trigWord]["command"])

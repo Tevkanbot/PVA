@@ -7,6 +7,16 @@ class Data:
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     
     @staticmethod
+    def load_apps():
+        # Путь к файлу triggers_and_commands.json
+        file_path = os.path.join(Data.script_dir, "backend", "jsons", "app_data.json")
+        
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+        
+        return data
+    
+    @staticmethod
     def load_triggers():
         # Путь к файлу triggers_and_commands.json
         file_path = os.path.join(Data.script_dir, "backend", "jsons", "triggers_and_commands.json")

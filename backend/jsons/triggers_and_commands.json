@@ -48,6 +48,10 @@
         "громкость": {
             "command": "Audio.volume(num)",
             "num": true
+        },
+        "открой": {
+            "command": " Open_Close_App.find_apps(num, phrese)",
+            "num": false
         }
     },
     "two_word_actions": {
