@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleSwitch = document.querySelector('.toggle-switch');
     const box_text_Confirmation = document.getElementById('box_text_Confirmation');
     const Button_Politics1_Back = document.getElementById('Button_Politics1_Back');
+    const box_text5 = document.getElementById('box_text5');
 
     // Скрываем кнопки и блоки при загрузке страницы
     nextButton.style.display = 'none';
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleSwitch.style.display = 'none';
     box_text_Confirmation.style.display = 'none';
     Button_Politics1_Back.style.display = 'none';
+    
+
 
     window.onload = function() {
         const centerWindow = () => {
@@ -53,27 +56,33 @@ document.addEventListener('DOMContentLoaded', function() {
         box_text2.style.display = 'none';
         box_text3.style.display = 'none';
         box_text4.style.display = 'none';
-
+        box_text5.style.display = 'none'; // Изначально скрытый пятый блок
+    
         // Задержка перед показом второго блока
         setTimeout(() => {
             box_text1.style.display = 'none';
             box_text2.style.display = 'block';
             box_text3.style.display = 'none';
-
+            box_text4.style.display = 'none';
+            box_text5.style.display = 'none';
             setTimeout(() => {
                 box_text2.style.display = 'none';
                 box_text3.style.display = 'block';
-
+                box_text4.style.display = 'none';
+                box_text5.style.display = 'none';
                 setTimeout(() => {
                     box_text3.style.display = 'none';
                     box_text4.style.display = 'block';
-                    Button_Politics.style.display = 'block';
+                    box_text5.style.display = 'none';
+                    Button_Politics.style.display = 'none';
+                    setTimeout(() => {
+                        box_text4.style.display = 'none';
+                        Button_Politics.style.display = 'block'; 
+                    }, 1000); // Задержка перед показом пятого блока
                 }, 1000); // Задержка перед показом четвёртого блока
-
             }, 1000); // Задержка перед показом третьего блока
-
         }, 1000); // Задержка перед показом второго блока
-    } 
+    }
     showBoxesSequentially();
 
     // Кнопка перенос на политику к.
@@ -86,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         box_text_Politics.style.display = 'block';    
         toggleSwitch.style.display = 'block';      
         box_text_Confirmation.style.display = 'block';
-        box_text_Confirmation.style.display = 'block';
+
 
     });
 
@@ -116,57 +125,27 @@ document.getElementById('Button_Politics1_Back').addEventListener('click', funct
 });
 
 
-// Функция для изменения размера окна
-function resize_window(width, height) {
-    window.resizeTo(width, height);
-}
-
-// Экспонируем функцию для вызова из Python
-eel.expose(resize_window);
-
-
-    // Проверка при вводе имени
-    nameInput.addEventListener('input', function() {
-        if (nameInput.value.trim()) {
-            nextButton.style.display = 'block';
-        } else {
-            nextButton.style.display = 'none';
-        }
-    });
-
-
-
-
-
-    // Функция для показа прямоугольников
-    async function showRectangles() {
-        var name = nameInput.value;
-        if (name.trim()) {
-            await eel.process_name(name); // Предполагаем, что функция process_name определена в Python
-            secondRectangle.textContent = 'Добавьте свои приложения!';
-            thirdRectangle.textContent = '';
-
-            secondRectangle.style.display = 'block';
-            thirdRectangle.style.display = 'block';
-            inner6Rectangle.style.display = 'block';
-            nameInput.disabled = true;
-            nextButton.style.display = 'none';
-
-            // Анимация для появления второго и третьего прямоугольников
-        
-        }
+nameInput.addEventListener('input', function() {// Ввод имени
+    if (nameInput.value.trim()) {
+        nextButton.style.display = 'block';
+    } else {
+        nextButton.style.display = 'none';
     }
+});
+nextButton.addEventListener('click', handleNextButton);// Назначение обработчика на кнопку "Дальше"
 
-    // Назначение обработчика на кнопку "Дальше"
-    nextButton.addEventListener('click', showRectangles);
+function handleNextButton() {// Функция для кнопки "Дальше", имя
+    const name = nameInput.value.trim();// Получаем значение имени из input
+    if (name) {// Проверяем, чтобы имя не было пустым
+        // Вызываем функцию Python через Eel
+        eel.process_name(name)();
 
-    // Функция для кнопки "Назад"
-    function handleBackButton() {
-        inner6Rectangle.style.display = 'none';
-        secondRectangle.style.display = 'none';
-        thirdRectangle.style.display = 'none';
+        nameInput.style.display = 'none'; // Скрываем input и кнопку после отправки
         nameInput.disabled = false;
         nameInput.value = '';
         nextButton.style.display = 'none';
+
+        window.location.replace('../index.html');//открываем index.html
     }
+}
 });

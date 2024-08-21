@@ -75,8 +75,11 @@ def enableMicrophone(state):
     #await asyncio.sleep(1)
 
 @eel.expose
+def toggleSwitch(isHidden):
+        print("Согласие с п.к.")
+
+@eel.expose
 def send_message_to_chat(message):
-    print(f"Отправка сообщения в чат через: {message}")
     eel.display_message_in_chat(message)  # Это вызывает JavaScript функцию
     #await asyncio.sleep(1)
 

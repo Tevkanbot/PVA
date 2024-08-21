@@ -5,15 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Список элементов, которые должны быть видимыми
     const elementsToCheck = [
-        'menu1-rectangle',
+        'Input_text',
         'imageButton',
         'imageButton2',
         'chat-window',
-        'menu5-rectangle',
-        'menu6-rectangle',
-        'menu7-rectangle',
-        'menu8-rectangle',
-        'menu9-rectangle'
+        'Account_Name',
+        'Name_PVA',
+        'Account_Photo',
+        'menu4-rectangle'
     ];
 
 eel.on_load(); // вызов функции после загрузки страницы
