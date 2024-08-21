@@ -21,7 +21,7 @@ class Voice:
             with speech_recognition.Microphone() as mic:
                 print("<<<<<>>>>>")
                 
-                audio = self.sr.listen(source=mic, timeout=0.3)
+                audio = self.sr.listen(source=mic, timeout=0.5)
                 query = self.sr.recognize_google(audio_data=audio, language="ru-RU").lower()
 
                 return query
