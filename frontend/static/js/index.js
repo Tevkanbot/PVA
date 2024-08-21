@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 eel.on_load(); // вызов функции после загрузки страницы
 function infiniteLoopFunction() {// Функция, которая будет выполняться в бесконечном цикле
-    eel.search_and_send_message();
+    eel.wait_for_commands();
     
     requestAnimationFrame(infiniteLoopFunction);// Запрашиваем следующий кадр
   }
