@@ -61,7 +61,7 @@
 
 .Namevvod {
   /* Стили для текстового поля */
-  width: 28vw; /* Ширина поля */
+  width: 35vw; /* Ширина поля */
   height: 35px; /* Высота поля */
   padding: 5px; /* Внутренние отступы */
   font-size: 18px; /* Размер шрифта */
@@ -72,11 +72,11 @@
   justify-content: center; /* Горизонтальное выравнивание содержимого */
   align-items: center; /* Вертикальное выравнивание содержимого */
   position: absolute; /* Абсолютное позиционирование */
-  top: 75%; /* Вертикальное положение */
+  top: 50%; /* Вертикальное положение */
   left: 50%; /* Горизонтальное положение */
   transform: translate(-50%, -50%); /* Смещение по X и Y */
   z-index: 10; /* Значение для наложения */
-  animation: gradientShift 4s linear infinite, fadeIn 2s ease-out forwards; /* Анимация градиента и появления */
+  animation: gradientShift 3s linear infinite, fadeIn 2s ease-out forwards; /* Анимация градиента и появления */
   color: #ffffff; /* Цвет текста */
   text-align: center; /* Центрирование текста */
   border: none; /* Убирает рамку */
@@ -91,7 +91,27 @@
   opacity: 1; /* Полная видимость текста плейсхолдера */
 }
 
-
+.Button_Name_Back {
+  width: 22vw; /* Ширина кнопки */
+  height: 35px; /* Высота кнопки */
+  padding: 5px; /* Внутренние отступы */
+  font-size: 18px; /* Размер шрифта */
+  border-radius: 14px; /* Радиус скругления углов */
+  background: linear-gradient(to right, #114cff, #86a4ff); /* Начальный градиент */
+  background-size: 200% 100%; /* Размер фона для анимации */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  justify-content: center; /* Горизонтальное выравнивание содержимого */
+  align-items: center; /* Вертикальное выравнивание содержимого */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 92%;
+  left: 88%;
+  transform: translate(-50%, -50%); /* Смещение по X и Y */
+  z-index: 10; /* Значение для наложения */
+  animation: gradientShift 4s linear infinite, fadeIn 1s ease-out forwards; /* Анимация градиента и появления */
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Центрирование текста */
+}
 
 .box_text {
   width: 100%; /* Ширина контейнера */
@@ -169,11 +189,11 @@ p {
   justify-content: center; /* Горизонтальное выравнивание содержимого */
   align-items: center; /* Вертикальное выравнивание содержимого */
   position: absolute; /* Абсолютное позиционирование */
-  top: 75%;
+  top: 50%;
   left: 21.5%;
   transform: translate(20%, -50%); /* Смещение по X и Y */
   z-index: 10; /* Значение для наложения */
-  animation: gradientShift 4s linear infinite, fadeIn 2s ease-out forwards; /* Анимация градиента и появления */
+  animation: gradientShift 3s linear infinite, fadeIn 2s ease-out forwards; /* Анимация градиента и появления */
   color: #ffffff; /* Цвет текста */
   text-align: center; /* Центрирование текста */
 }
@@ -192,6 +212,7 @@ p {
 
 
 
+/* Стиль для контейнера с кастомным ползунком */
 .box_text_Politics {
   width: 98%; /* Ширина контейнера */
   max-width: 800px; /* Максимальная ширина контейнера */
@@ -206,12 +227,29 @@ p {
   align-items: center; /* Горизонтальное выравнивание содержимого */
   justify-content: center; /* Вертикальное выравнивание содержимого */
   color: white; /* Цвет текста белый */
-  font-size: 18px; /* Размер шрифта текста */
+  font-size: 17px; /* Размер шрифта текста */
+  text-align: left;
   font-family: Calibri, sans-serif; /* Шрифт Calibri, запасной шрифт sans-serif */
   overflow: auto; /* Добавляет ползунки прокрутки внутри контейнера */
   position: absolute; /* Абсолютное позиционирование */
   top: 3px; /* Расположение от верхнего края родительского контейнера */
 }
+/* Стилизация ползунка */
+.box_text_Politics::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикального ползунка */
+}
+.box_text_Politics::-webkit-scrollbar-track {
+  background: #2E2E2E; /* Цвет фона трека ползунка */
+  border-radius: 10px; /* Закругление углов трека */
+}
+.box_text_Politics::-webkit-scrollbar-thumb {
+  background: #4A4A4A; /* Цвет ползунка */
+  border-radius: 10px; /* Закругление углов ползунка */
+}
+.box_text_Politics::-webkit-scrollbar-thumb:hover {
+  background: #6A6A6A; /* Цвет ползунка при наведении */
+}
+
 
 /* Стили для переключателя */
 .toggle-switch {
@@ -256,9 +294,9 @@ p {
 
 
 .box_text_Confirmation {
-  width: 57%; /* Ширина контейнера */
+  width: 50%; /* Ширина контейнера */
   max-width: 800px; /* Максимальная ширина контейнера */
-  height: 50px; /* Фиксированная высота контейнера */
+  height: 30px; /* Фиксированная высота контейнера */
   padding: 5px; /* Внутренние отступы контейнера */
   box-sizing: border-box; /* Учитываем отступы и границы в расчете ширины */
   background-color: #1E1E1E; /* Фоновый цвет прямоугольника */
@@ -271,7 +309,7 @@ p {
   font-size: 18px; /* Размер шрифта текста */
   font-family: Calibri, sans-serif; /* Шрифт Calibri, запасной шрифт sans-serif */
   position: absolute; /* Абсолютное позиционирование */
-  top: 347px; /* Расположение от верхнего края окна просмотра */
+  top: 360px; /* Расположение от верхнего края окна просмотра */
   left: 95px; /* Расположение от левого края окна просмотра */
 }
 
@@ -296,18 +334,4 @@ p {
   animation: gradientShift 4s linear infinite, fadeIn 1s ease-out forwards; /* Анимация градиента и появления */
   color: #ffffff; /* Цвет текста */
   text-align: center; /* Центрирование текста */
-}
-
-.box_text {
-  width: 100%; /* Ширина контейнера */
-  max-width: 800px; /* Максимальная ширина контейнера */
-  padding: 20px; /* Внутренние отступы контейнера */
-  box-sizing: border-box; /* Учитываем отступы и границы в расчете ширины */
-  background-color: #1E1E1E; /* #1E1E1E Фоновый цвет прямоугольника */
-  border-radius: 10px; /* Закругление углов */
-  display: flex; /* Flexbox для выравнивания содержимого */
-  flex-direction: column; /* Вертикальное расположение текста и кнопки */
-  align-items: center; /* Горизонтальное выравнивание содержимого */
-  justify-content: center; /* Вертикальное выравнивание содержимого */
-  margin: 0 auto; /* Центрируем контейнер по горизонтали */
 }

@@ -1,11 +1,9 @@
 import eel
-import asyncio
 from pathlib import Path
 from backend.data import Data
 import multiprocessing 
-import time
-import os
 from main import main as start_backend
+import json
 
 
 
@@ -21,21 +19,34 @@ class Front:
     def is_user_registered():
         data = Data.load_app_data()
         return data.get("name") != "None"
+    
     @staticmethod
     def save_user(name):
         data = Data.load_app_data()
         data['name'] = name.lower()
         Data.dump_app_data(data)
+
     @staticmethod
     def save_app(input_value_1, input_value_2):
         data = Data.load_app_data()
         data["apps"][input_value_1] = input_value_2.lower()
         Data.dump_app_data(data)
+
     @staticmethod
     def save_website(input_value_1, input_value_2):
         data = Data.load_app_data()
         data["websites"][input_value_1] = input_value_2.lower()
         Data.dump_app_data(data)
+
+    @staticmethod
+    def load_data():
+        with open('backend/jsons/app_data.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+
+    @staticmethod
+    def get_initials(name):
+        return name[:1]  # Извлекаем первые две буквы
+
     @staticmethod
     def start_app():
         if Front.is_user_registered():
@@ -69,40 +80,45 @@ def toggle_sound(action):
 def enableMicrophone(state):
     if state:
         eel.display_message_in_chat("Включение микрофона")
+        end2.send({"command": "change_mic_status", "data": True})
     else:
         eel.display_message_in_chat("Выключение микрофона")
-    
-    #await asyncio.sleep(1)
+        end2.send({"command": "change_mic_status", "data": False})
+
+@eel.expose
+def toggleSwitch(isHidden):#Согласие с лицензией
+        print("Согласие с лицензией")
+
+@eel.expose #Вытягивание имени пользователя (первая буква)
+def get_initials_from_json():
+    data = Front.load_data()  # Используем статический метод через имя класса
+    name = data.get('name', '')
+    return Front.get_initials(name)  # Используем статический метод через имя класса
+
+@eel.expose
+def send_Message_Input(message): #Отправка сообщение через строку ввода
+    eel.display_message_user(message)
+    print(message)
 
 @eel.expose
 def send_message_to_chat(message):
-    print(f"Отправка сообщения в чат через: {message}")
     eel.display_message_in_chat(message)  # Это вызывает JavaScript функцию
-    #await asyncio.sleep(1)
-
 
 @eel.expose
-def on_load():
-    # Функция вызывается из JavaScript
-    
+def on_load(): # Функция вызывается из JavaScript при запуске страницы
     eel.display_message_in_chat("Добро пожаловать! Я PVA - Клей")
     
     process_2 = multiprocessing.Process(target=start_backend, kwargs={"end": end1}, daemon=True)
     process_2.start()
 
-    #frontend_process = multiprocessing.Process(target=main)
-    #frontend_process.start()    
-
 @eel.expose
-def search_and_send_message():
-
+def wait_for_commands():
     if end2.poll():
-        data = end2.recv()
-        print("data: ", data)
-        eel.display_message_in_chat(data)   
+        recived_data = end2.recv() # Получаем словарь {"command": "какая-то команда", "data": "информация к этой команде"}
+
+        if recived_data["command"] == "send_message":
+            eel.display_message_in_chat(recived_data["data"])
 
 if __name__ == "__main__":
-
-
-    process_3 = multiprocessing.Process(target=Front.start_app)
-    process_3.start()
+    app_process = multiprocessing.Process(target=Front.start_app)
+    app_process.start()

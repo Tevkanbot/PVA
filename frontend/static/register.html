@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<meta http-equiv="Content-Language" content="ru">
 <head>
     <meta charset="UTF-8">
     <title>КЛЕЙ</title>
@@ -7,7 +7,8 @@
     <script src="js/forbidden.js" defer></script>
     <script type="text/javascript" src="/eel.js"></script>
     <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="css/rectangleAnimation.css">
+    <link rel="stylesheet" href="css/CSS.css">
+
     
     <link rel="apple-touch-icon" sizes="57x57" href="web/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="web/apple-icon-60x60.png">
@@ -30,7 +31,7 @@
 <body style="background-color:#1E1E1E"> <!-- Фон -->
 
     <input type="text" id="nameInput" class="Namevvod" placeholder="Введите имя">
-    <button id="nextButton" style="display:none;" onclick="showRectangles()">Дальше</button>
+    <button id="nextButton" class="Button_Name_Back" style="display:none;" onclick="showRectangles()">Дальше</button>
 
     <div id="secondRectangle" class="inner4-rectangle" style="display:none;"></div> <!-- Второй прямоугольник -->
     <div id="thirdRectangle" class="inner5-rectangle" style="display:none;"></div> <!-- Третий прямоугольник -->
@@ -50,12 +51,22 @@
             <p class="text">Прочитайте нашу лицензию</p>
                 </div>
         <button id="Button_Politics" class="Button_Politics">Прочитать</button>
-        <div class="box_text_Politics" id="box_text_Politics">Привет как дела хочу спросить хватит зачем давай</div>
+        <div class="box_text_Politics" id="box_text_Politics">Простая демонстрационная версия программного обеспечения
+            <br><br>
+            Авторские права 2024 Карелин Иван, Кирюхин Дмитрий, Макеев Дмитрий
+            <br><br>
+            Настоящим лицу, получившему копию данного программного обеспечения и связанных с ним файлов документации (далее именуемых “Программное обеспечение”),
+            предоставляется разрешение на работу с Программным обеспечением, подразумевающее права исключительно на личное использование, при соблюдении следующих условий:
+            <br><br>
+            Лицам, получившим данное Программное обеспечение, запрещается: копировать, изменять, комбинировать, публиковать и распространять данное Программное обеспечение,
+            а также монетизировать (получать деньги с использованием данного Программного обеспечения) данное Программное обеспечение в любой форме.
+            <br><br>
+            ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ “КАК ЕСТЬ" БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНЫХ ИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ ИМИ, 
+            ГАРАНТИИ ТОВАРНОЙ ПРИГОДНОСТИ, ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ И НЕНАРУШЕНИЯ АВТОРСКИХ ПРАВ. НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ ЗА КАКИЕ-ЛИБО ПРЕТЕНЗИИ, 
+            УЩЕРБ ИЛИ ИНУЮ ОТВЕТСТВЕННОСТЬ, БУДЬ ТО В РЕЗУЛЬТАТЕ ДОГОВОРА, ГРАЖДАНСКОГО ПРАВОНАРУШЕНИЯ ИЛИ ИНЫМ ОБРАЗОМ ВОЗНИКАЮЩИЕ В РЕЗУЛЬТАТЕ ИСПОЛЬЗОВАНИЯ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ ИЛИ ДРУГИХ ОПЕРАЦИЙ С НИМ.</div>
         <div class="toggle-switch"></div>
         <div class="box_text_Confirmation" id="box_text_Confirmation">Я согласен с лицензей</div>
-        <button id="Button_Politics1_Back" class="Button_Politics1_Back">Назад</button>
-        <!-- <div class="box_text5" id="box_text5">
-            <class="text">Напишите имя</p>
-        </div> -->
+        <button id="Button_Politics1_Back" class="Button_Politics1_Back">Далее</button>
+        <div class="box_text5" id="box_text5" class="text">Напишите имя</div>
 </body>
 </html>

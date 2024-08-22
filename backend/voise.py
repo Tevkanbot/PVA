@@ -4,14 +4,12 @@ class Voice:
     def __init__(self):
         self.sr =  speech_recognition.Recognizer()
 
-        self.sr.pause_threshold = 0.3
-        self.sr.non_speaking_duration = 0.1
+        self.sr.pause_threshold = 0.5
+        self.sr.non_speaking_duration = 0.5
 
     def calibrate_recognizer(self):
-        import time
         with speech_recognition.Microphone() as mic:
             print("Калибровка, ничего не говорите!")
-            time.sleep(1)
             self.sr.adjust_for_ambient_noise(source=mic, duration=1)
             print("Калибровка завершена")
             
@@ -21,7 +19,7 @@ class Voice:
             with speech_recognition.Microphone() as mic:
                 print("<<<<<>>>>>")
                 
-                audio = self.sr.listen(source=mic, timeout=0.3)
+                audio = self.sr.listen(source=mic, timeout=0.5)
                 query = self.sr.recognize_google(audio_data=audio, language="ru-RU").lower()
 
                 return query
@@ -34,5 +32,7 @@ class Voice:
             pass
     
 if __name__ == "__main__":
+    vo = Voice()
+    vo.calibrate_recognizer
     while True:
-        print(Voice.get_phrase())
+        print(vo.get_phrase())
