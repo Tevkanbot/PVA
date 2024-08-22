@@ -3,6 +3,7 @@ from pathlib import Path
 from backend.data import Data
 import multiprocessing 
 from main import main as start_backend
+import json
 
 
 
@@ -36,6 +37,15 @@ class Front:
         data = Data.load_app_data()
         data["websites"][input_value_1] = input_value_2.lower()
         Data.dump_app_data(data)
+
+    @staticmethod
+    def load_data():
+        with open('backend/jsons/app_data.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+
+    @staticmethod
+    def get_initials(name):
+        return name[:1]  # Извлекаем первые две буквы
 
     @staticmethod
     def start_app():
@@ -76,10 +86,23 @@ def enableMicrophone(state):
         end2.send({"command": "change_mic_status", "data": False})
 
 @eel.expose
-def send_message_to_chat(message):
-    print(f"Отправка сообщения в чат через: {message}")
-    eel.display_message_in_chat(message)  # Это вызывает JavaScript функцию
+def toggleSwitch(isHidden):#Согласие с лицензией
+        print("Согласие с лицензией")
 
+@eel.expose #Вытягивание имени пользователя (первая буква)
+def get_initials_from_json():
+    data = Front.load_data()  # Используем статический метод через имя класса
+    name = data.get('name', '')
+    return Front.get_initials(name)  # Используем статический метод через имя класса
+
+@eel.expose
+def send_Message_Input(message): #Отправка сообщение через строку ввода
+    eel.display_message_user(message)
+    print(message)
+
+@eel.expose
+def send_message_to_chat(message):
+    eel.display_message_in_chat(message)  # Это вызывает JavaScript функцию
 
 @eel.expose
 def on_load(): # Функция вызывается из JavaScript при запуске страницы
