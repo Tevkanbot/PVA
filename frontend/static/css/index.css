@@ -1,131 +1,191 @@
-  .Input_text{
-    width: 39vw; /* Ширина поля для ввода */
-    height: 10.5vh; /* Высота поля для ввода */
-    top: 87%; /* Позиционирование по вертикали */
-    left: 25%; /* Позиционирование по горизонтали */
-    
-    font-size: 18px; /* Размер шрифта */
-    border-radius: 15px; /* Радиус скругления углов */
-    background: linear-gradient(to right, #9dffb2, #4ECCA3); /* Переливающийся фон */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
-    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-    
-    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
-    display: flex; /* Используйте Flexbox для центрирования содержимого */
-    justify-content: center; /* Горизонтальное центрирование содержимого */
-    align-items: center; /* Вертикальное центрирование содержимого */
-    }
-    
-    .Sound{
-    width: 8vw; /* Ширина поля для ввода */
-    height: 11vh; /* Высота поля для ввода */
-    top: 87%; /* Позиционирование по вертикали */
-    left: 52%; /* Позиционирование по горизонтали */
-    
-    font-size: 18px; /* Размер шрифта */
-    border-radius: 15px; /* Радиус скругления углов */
-    background: linear-gradient(to right, #9dffb2, #4ECCA3); /* Переливающийся фон */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
-    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-    
-    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
-    display: flex; /* Используйте Flexbox для центрирования содержимого */
-    justify-content: center; /* Горизонтальное центрирование содержимого */
-    align-items: center; /* Вертикальное центрирование содержимого */
-    }
-    
-    .Microphone{
-    width: 8vw; /* Ширина поля для ввода */
-    height: 11vh; /* Высота поля для ввода */
-    top: 87%; /* Позиционирование по вертикали */
-    left: 63%; /* Позиционирование по горизонтали */
-    
-    font-size: 18px; /* Размер шрифта */
-    border-radius: 15px; /* Радиус скругления углов */
-    background: linear-gradient(to right, #9dffb2, #4ECCA3); /* Переливающийся фон */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
-    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-    
-    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
-    display: flex; /* Используйте Flexbox для центрирования содержимого */
-    justify-content: center; /* Горизонтальное центрирование содержимого */
-    align-items: center; /* Вертикальное центрирование содержимого */
-    } 
+.Input_container {
+  width: 48vw; /* Ширина контейнера */
+  height: 11vh; /* Высота контейнера */
+  top: 79.9%; /* Позиционирование по вертикали */
+  left: 11.5%; /* Позиционирование по горизонтали */
+  
+  font-size: 16px; /* Размер шрифта */
+  border-radius: 15px; /* Радиус скругления углов */
+  background: linear-gradient(to right, #4473ff, #97b1ff); /* Фоновый градиент */
+  background-size: 200% 100%; /* Размер фона для анимации */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  display: flex; /* Flexbox для выравнивания содержимого */
+  align-items: center; /* Вертикальное центрирование содержимого */
+  padding: 0 5px; /* Отступы по бокам для контейнера */
+  overflow: hidden; /* Скрытие переполненного содержимого */
+  z-index: 2; /* Слой 2 */
+}
 
-    .Account_Name{ /* Имя пользователя */
-    width: 11vw; /* Ширина поля для ввода */
-    height: 10vh; /* Высота поля для ввода */
-    top: 9%; /* Позиционирование по вертикали */
-    left: 81%; /* Позиционирование по горизонтали */
-    font-size: 18px; /* Размер шрифта */
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
-    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
-    display: flex; /* Используйте Flexbox для центрирования содержимого */
-    justify-content: center; /* Горизонтальное центрирование содержимого */
-    align-items: center; /* Вертикальное центрирование содержимого */
-    font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
-    font-size: 30px; /* Размер шрифта */
-    font-weight: bold; /* Жирное начертание */
-    color: #000000; /* Цвет текста */
-    padding-top: 11px;/* Верхний внутренний отступ: 15 пикселей */
-    padding-right: 0px;/* Правфй внутренний отступ: 10 пикселей */
-    padding-bottom: 0px;/* Нижний внутренний отступ: 5 пикселей */
-    padding-left: 120px;/* Левый элемента: 1 пиксель толщины, черного цвета */
-    
+.Input_text {
+  flex: 1; /* Заполняет всю доступную ширину внутри контейнера */
+  height: 100%; /* Высота поля ввода на всю высоту контейнера */
+  font-size: 16px; /* Размер шрифта */
+  border-radius: 15px; /* Радиус скругления углов */
+  background: transparent; /* Прозрачный фон для текста */
+  color: #ffffff; /* Цвет текста */
+  border: none; /* Убирает рамку */
+  outline: none; /* Убирает контур при фокусе на поле ввода */
+  resize: none; /* Запрет изменения размера текстового поля */
+  padding: 0 5px; /* Отступы внутри поля ввода */
+  order: 1; /* Порядок отображения элемента */
+}
+
+.Button_Send {
+  background: transparent; /* Прозрачный фон для кнопки */
+  border: none; /* Убирает рамку кнопки */
+  padding: 0; /* Убирает внутренние отступы кнопки */
+  margin-left: 10px; /* Отступ слева для разделения от поля ввода */
+  cursor: pointer; /* Указывает, что это кнопка */
+  display: flex; /* Flexbox для выравнивания содержимого в кнопке */
+  align-items: center; /* Вертикальное центрирование содержимого в кнопке */
+  width: 32px; /* Ширина картинки */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  order: 2; /* Порядок отображения элемента */
+  transition: all 0.2s ease; /* Плавный переход для визуальных эффектов */
+}
+
+.Button_Send:active {
+  transform: translate(-6%, -6%) scale(0.95); /* Немного уменьшает размер кнопки при нажатии */
+
+}
+
+    /* Стили для плейсхолдера */
+    .Input_text::placeholder {
+      color: rgba(255, 255, 255, 0.719); /* Цвет текста плейсхолдера */
+      opacity: 1; /* Полная видимость текста плейсхолдера */
     }
-    
-    .Name_PVA{
-      width: 11vw; /* Ширина поля для ввода */
-      height: 11vh; /* Высота поля для ввода */
-      top: 9%; /* Позиционирование по вертикали */
-      left: 9%; /* Позиционирование по горизонтали */
+
+    .Sound {
+      width: 8vw; /* Ширина кнопки */
+      height: 11vh; /* Высота кнопки */
+      top: 85.3%; /* Позиционирование по вертикали */
+      left: 69%; /* Позиционирование по горизонтали */
       
       font-size: 18px; /* Размер шрифта */
       border-radius: 15px; /* Радиус скругления углов */
-      background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+      background: linear-gradient(to right, #5e87ff, #97b1ff); /* Фоновый градиент */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень кнопки */
+      border: none; /* Убирает любые границы */
       position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-      
       transform: translate(-50%, -50%); /* Смещение для точного центрирования */
       display: flex; /* Используйте Flexbox для центрирования содержимого */
       justify-content: center; /* Горизонтальное центрирование содержимого */
       align-items: center; /* Вертикальное центрирование содержимого */
+      z-index: 2; /* Слой 2 */
+      transition: all 0.2s ease; /* Плавный переход для визуальных эффектов */
+    }
+    /* Эффект нажатия кнопки */
+    .Sound:active {
+      background: linear-gradient(to right, #3a5bb6, #7f9fff); /* Изменение градиента при нажатии */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень при нажатии */
+      transform: translate(-50%, -50%) scale(0.95); /* Немного уменьшает размер кнопки при нажатии */
+    }
+    .Microphone {
+      width: 8vw; /* Ширина кнопки */
+      height: 11vh; /* Высота кнопки */
+      top: 85.3%; /* Позиционирование по вертикали */
+      left: 81%; /* Позиционирование по горизонтали */
+      
+      font-size: 18px; /* Размер шрифта */
+      border-radius: 15px; /* Радиус скругления углов */
+      background: linear-gradient(to right, #5e87ff, #97b1ff); /* Фоновый градиент */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень кнопки */
+      border: none; /* Убирает любые границы */
+      position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+      transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+      display: flex; /* Используйте Flexbox для центрирования содержимого */
+      justify-content: center; /* Горизонтальное центрирование содержимого */
+      align-items: center; /* Вертикальное центрирование содержимого */
+      z-index: 2; /* Слой 2 */
+      transition: all 0.2s ease; /* Плавный переход для визуальных эффектов */
+    }
+    /* Эффект нажатия кнопки */
+    .Microphone:active {
+      background: linear-gradient(to right, #3a5bb6, #7f9fff); /* Изменение градиента при нажатии */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень при нажатии */
+      transform: translate(-50%, -50%) scale(0.95); /* Немного уменьшает размер кнопки при нажатии */
+    }
     
-     font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
-     font-size: 40px; /* Размер шрифта */
-     font-weight: bold; /* Жирное начертание */
-     color: #000000; /* Цвет текста */
     
+
+    .Account_Name {
+      width: 11vw; /* Ширина поля для ввода */
+      height: 10vh; /* Высота поля для ввода */
+      top: 9%; /* Позиционирование по вертикали */
+      left: 94.7%; /* Позиционирование по горизонтали */
+      font-size: 18px; /* Размер шрифта */
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-color: #1E1E1E; /* Цвет фона */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+      position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+      transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+      display: flex; /* Используйте Flexbox для центрирования содержимого */
+      justify-content: center; /* Горизонтальное центрирование содержимого */
+      align-items: center; /* Вертикальное центрирование содержимого */
+      padding-top: 5px; /* Верхний внутренний отступ */
+      padding-right: 0px; /* Правый внутренний отступ */
+      padding-bottom: 6px; /* Нижний внутренний отступ */
+      padding-left: 10px; /* Левый внутренний отступ */
+      border-top: 4px solid #ffffff; /* Белая рамка сверху */
+      border-left: 4px solid #ffffff; /* Белая рамка слева */
+      border-bottom: 4px solid #ffffff; /* Белая рамка снизу */
+      border-right: none; /* Без рамки справа */
+    }
     
-    
-     padding-left: 5px; /* Отступ слева */
+  
+  
+      .Account_Photo{
+        width: 45px; /* Ширина иконки пользователя */
+        height: 45px; /* Высота иконки пользователя */
+        border-radius: 50%; /* Округление иконки в круг */
+        background-color: #cbe6ff; /* Голубой цвет фона круга */
+        display: flex; /* Используем flexbox для центрирования текста внутри круга */
+        align-items: center; /* Вертикальное выравнивание текста */
+        justify-content: center; /* Горизонтальное выравнивание текста */
+        font-size: 20px; /* Размер текста внутри круга */
+        color: #000000; /* Белый цвет текста */
+        margin-left: 5px; /* Отступ слева от иконки */
+        flex-shrink: 0; /* Запрещаем уменьшение иконки при малом размере контейнера */
+        font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+        font-weight: bold; /* Жирное начертание */
+        font-size: 28px; /* Размер текста внутри круга */
+        text-transform: uppercase;
+        padding: 2px; /* Внутренние отступы */
       }
     
-      .Account_Photo{
-        width: 30vw; /* Ширина поля для ввода */
-        height: 10vh; /* Высота поля для ввода */
-        top: 9%; /* Позиционирование по вертикали */
-        left: 83%; /* Позиционирование по горизонтали */
-        position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-        transform: translate(-50%, -50%); /* Смещение для точного центрирования */
-        display: flex; /* Используйте Flexbox для центрирования содержимого */
-        justify-content: center; /* Горизонтальное центрирование содержимого */
-        align-items: center; /* Вертикальное центрирование содержимого */
-        }
+  .Name_PVA{
+    width: 11vw; /* Ширина поля для ввода */
+    height: 11vh; /* Высота поля для ввода */
+    top: 9%; /* Позиционирование по вертикали */
+    left: 9%; /* Позиционирование по горизонтали */
     
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 15px; /* Радиус скругления углов */
+    background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+    position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+    
+    transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+    display: flex; /* Используйте Flexbox для центрирования содержимого */
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center; /* Вертикальное центрирование содержимого */
+  
+   font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+   font-size: 40px; /* Размер шрифта */
+   font-weight: bold; /* Жирное начертание */
+   color: #000000; /* Цвет текста */
+   padding-left: 5px; /* Отступ слева */
+    }
+
       #chat-window {
         width: 75vw; /* Ширина элемента */
         height: 55vh; /* Высота элемента  */
         top: 50%; /* Позиционирование по вертикали  */
         left: 49%; /* Позиционирование по горизонтали  */
         font-size: 18px; /* Размер шрифта текста внутри элемента */
-        border-radius: 15px; /* Закругление углов элемента */
+        border-radius: 10px; /* Закругление углов элемента */
         background-color: #393E46; /* Цвет фона прямоугольника */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
         position: fixed; /* Фиксированное позиционирование относительно окна браузера */
@@ -134,9 +194,9 @@
         align-items: center; /* Вертикальное центрирование содержимого */
         overflow-y: scroll; /* Добавление вертикального скроллбара, если содержимое превышает высоту элемента */
         padding: 10px; /* Внутренние отступы элемента со всех сторон */
+        z-index: 2; /* Слой 1 */
+        box-shadow: none; /* Убирает тень */
       }
-        
-
     /* Стилизация ползунка */
 .chat-window::-webkit-scrollbar {
   width: 12px; /* Ширина вертикального ползунка */
@@ -153,57 +213,99 @@
   background: #6A6A6A; /* Цвет ползунка при наведении */
 }
     
-/* Основной стиль сообщения */
+#Bloak_button {
+  width: 75vw; /* Ширина элемента */
+  height: 22vh; /* Высота элемента  */
+  top: 80%; /* Позиционирование по вертикали  */
+  left: 49%; /* Позиционирование по горизонтали  */
+  font-size: 18px; /* Размер шрифта текста внутри элемента */
+  border-radius: 15px; /* Закругление углов элемента */
+  background-color: #393E46; /* Цвет фона прямоугольника */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
+  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  transform: translate(-50%, -50%); /* Смещение элемента на 50% по обеим осям для центрирования */
+  display: flex; /* Используйте Flexbox для выравнивания содержимого */
+  align-items: center; /* Вертикальное центрирование содержимого */
+  overflow: hidden; /* Убирает ползунки и скрывает содержимое, выходящее за пределы элемента */
+  padding: 10px; /* Внутренние отступы элемента со всех сторон */
+  z-index: 1; /* Слой 1 */
+}
+
+
+/* Основной стиль сообщения PVA */
+.message-container {
+  display: flex; /* Используем flexbox для выравнивания иконки и сообщения */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  margin-bottom: 5px; /* Отступ снизу */
+}
 .message {
   background-color: #ffffff; /* Белый фон */
   border-radius: 16px; /* Округление углов */
-  padding: 10px 15px; /* Внутренние отступы */
+  padding: 10px; /* Внутренние отступы */
   margin-bottom: 10px; /* Отступ снизу */
   word-wrap: break-word; /* Перенос длинных слов */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для эффекта подъема */
-  max-width: 80%; /* Ограничение ширины сообщения */
+  max-width: 60%; /* Ограничение ширины сообщения */
   position: relative; /* Для позиционирования стрелок */
   font-family: 'Roboto', sans-serif; /* Шрифт сообщения */
   line-height: 1.5; /* Интерлиньяж */
-  display: flex; /* Используем flexbox для размещения текста и аватара */
-  align-items: flex-start; /* Выравнивание по верхнему краю */
   overflow-wrap: break-word; /* Перенос длинных слов и строк */
   word-break: break-word; /* Перенос длинных слов */
 }
-/* Стиль для входящих сообщений */
-.message.incoming {
-  background-color: #f1f1f1; /* Светло-серый фон для входящих сообщений */
-  border-bottom-left-radius: 0; /* Убрать нижний левый угол */
-  border-top-right-radius: 16px; /* Оставить округление верхнего правого угла */
-  align-self: flex-start; /* Выравнивание по левому краю */
+.user-icon {
+  width: 40px; /* Ширина иконки пользователя */
+  height: 40px; /* Высота иконки пользователя */
+  border-radius: 50%; /* Округление иконки в круг */
+  background-color: #ffffff; /* Цвет фона круга */
+  display: flex; /* Используем flexbox для центрирования текста внутри круга */
+  align-items: center; /* Вертикальное выравнивание текста */
+  justify-content: center; /* Горизонтальное выравнивание текста */
+  font-size: 24px; /* Размер текста внутри круга */
+  color: #333; /* Цвет текста */
+  padding: 4px; /* Внутренние отступы */
+  margin-right: 10px; /* Отступ справа от иконки */
+  flex-shrink: 0; /* Запрещаем уменьшение иконки при малом размере контейнера */
+  font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+  font-weight: bold; /* Жирное начертание */
 }
-/* Стиль для исходящих сообщений */
-.message.outgoing {
-  background-color: #007aff; /* Синий фон для исходящих сообщений */
-  color: #ffffff; /* Белый текст для исходящих сообщений */
-  border-bottom-right-radius: 0; /* Убрать нижний правый угол */
-  border-top-left-radius: 16px; /* Оставить округление верхнего левого угла */
-  align-self: flex-end; /* Выравнивание по правому краю */
+
+
+/* Основной стиль сообщения пользователя */
+.message-container-user {
+  display: flex; /* Используем flexbox для выравнивания иконки и сообщения */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  justify-content: flex-end; /* Выравнивание контейнера сообщений по правому краю */
+  margin-bottom: 5px; /* Отступ снизу */
 }
-/* Стиль стрелок сообщений */
-.message::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
+.message-user {
+  background-color: #d0e4f7; /* Светло-голубой фон сообщения */
+  border-radius: 16px; /* Округление углов */
+  padding: 10px; /* Внутренние отступы */
+  margin-left: 10px; /* Отступ слева от сообщения для отделения от иконки */
+  word-wrap: break-word; /* Перенос длинных слов */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для эффекта подъема */
+  max-width: 60%; /* Ограничение ширины сообщения */
+  position: relative; /* Для позиционирования стрелок */
+  font-family: 'Roboto', sans-serif; /* Шрифт сообщения */
+  line-height: 1.5; /* Интерлиньяж */
+  overflow-wrap: break-word; /* Перенос длинных слов и строк */
+  word-break: break-word; /* Перенос длинных слов */
 }
-.message.incoming::before {
-  left: -15px;
-  border-right: 15px solid #f1f1f1; /* Цвет стрелки для входящих сообщений */
-  border-left: 15px solid transparent;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+.user-icon-message-user {
+  width: 40px; /* Ширина иконки пользователя */
+  height: 40px; /* Высота иконки пользователя */
+  border-radius: 50%; /* Округление иконки в круг */
+  background-color: #d0e4f7; /* Голубой цвет фона круга */
+  display: flex; /* Используем flexbox для центрирования текста внутри круга */
+  align-items: center; /* Вертикальное выравнивание текста */
+  justify-content: center; /* Горизонтальное выравнивание текста */
+  font-size: 28px; /* Размер текста внутри круга */
+  color: #272727; /* Белый цвет текста */
+  margin-left: 10px; /* Отступ слева от иконки */
+  flex-shrink: 0; /* Запрещаем уменьшение иконки при малом размере контейнера */
+  padding: 4px; /* Внутренние отступы */
+  font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
+  font-weight: bold; /* Жирное начертание */
+  text-transform: uppercase;
 }
-.message.outgoing::before {
-  right: -15px;
-  border-left: 15px solid #007aff; /* Цвет стрелки для исходящих сообщений */
-  border-right: 15px solid transparent;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-}
+
