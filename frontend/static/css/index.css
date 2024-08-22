@@ -106,8 +106,6 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень при нажатии */
       transform: translate(-50%, -50%) scale(0.95); /* Немного уменьшает размер кнопки при нажатии */
     }
-    
-    
 
     .Account_Name {
       width: 11vw; /* Ширина поля для ввода */
@@ -133,8 +131,6 @@
       border-bottom: 4px solid #ffffff; /* Белая рамка снизу */
       border-right: none; /* Без рамки справа */
     }
-    
-  
   
       .Account_Photo{
         width: 45px; /* Ширина иконки пользователя */
@@ -156,27 +152,35 @@
       }
     
   .Name_PVA{
-    width: 11vw; /* Ширина поля для ввода */
-    height: 11vh; /* Высота поля для ввода */
-    top: 9%; /* Позиционирование по вертикали */
-    left: 9%; /* Позиционирование по горизонтали */
+    width: 30vw; /* Ширина поля для ввода */
+    height: 10vh; /* Высота поля для ввода */
+    top: 8%; /* Позиционирование по вертикали */
+    left: 15%; /* Позиционирование по горизонтали */
     
-    font-size: 18px; /* Размер шрифта */
-    border-radius: 15px; /* Радиус скругления углов */
-    background: linear-gradient(to right,  #c1f6ff, #83d2ff); /* Переливающийся фон */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #1E1E1E; /* Цвет фона */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для добавления глубины */
     position: fixed; /* Фиксированное позиционирование относительно окна браузера */
-    
     transform: translate(-50%, -50%); /* Смещение для точного центрирования */
     display: flex; /* Используйте Flexbox для центрирования содержимого */
     justify-content: center; /* Горизонтальное центрирование содержимого */
     align-items: center; /* Вертикальное центрирование содержимого */
+    
+    padding-top: 2px; /* Верхний внутренний отступ */
+    padding-right: 10px; /* Правый внутренний отступ */
+    padding-bottom: 3px; /* Нижний внутренний отступ */
+    padding-left: 40px; /* Левый внутренний отступ */
+    
+    border-top: 4px solid #ffffff; 
+    border-left: none; /* Белая рамка слева */
+    border-bottom: 4px solid #ffffff; /* Белая рамка снизу */
+    border-right: 4px solid #ffffff; 
   
    font-family: 'Calibri', sans-serif; /* Установка шрифта Calibri */
    font-size: 40px; /* Размер шрифта */
    font-weight: bold; /* Жирное начертание */
-   color: #000000; /* Цвет текста */
-   padding-left: 5px; /* Отступ слева */
+   color: #ffffff; /* Цвет текста */
     }
 
       #chat-window {
