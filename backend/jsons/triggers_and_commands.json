@@ -12,68 +12,61 @@
     "two_word_triggers": [
         "открой браузер",
         "закрой браузер",
-        "сверни окна"
+        "сверни окна",
+        "найди ярлыки"
     ],
     "three_word_triggers": [
-        "первое второе третье",
-        "придумай красивую историю"
-        
+        "команда пример три"
     ],
     "four_word_triggers": [
-        "первое второе третье четвёртое ",
-        "назови всё число пи"
-
+        "команда пример номер четыре"
     ],
     "one_word_actions": {
         "стоп": {
-            "command": "Audio.play(num)",
+            "command": "Audio.play()",
             "num": false
         },
         "продолжить": {
-            "command": "Audio.play(num)",
+            "command": "Audio.play()",
             "num": false
         },
         "пауза": {
-            "command": "Audio.play(num)",
+            "command": "Audio.play()",
             "num": false
         },
         "погромче": {
-            "command": "Audio.volumeup(num)",
-            "num": true
+            "command": "Audio.volumeup()",
+            "num": false
         },
         "потише": {
-            "command": "Audio.volumedown(num)",
-            "num": true
+            "command": "Audio.volumedown()",
+            "num": false
         },
         "громкость": {
             "command": "Audio.volume(num)",
             "num": true
         },
         "открой": {
-            "command": " Open_Close_App.find_apps(num, phrese)",
+            "command": "Apps.open(phrase)",
             "num": false
         }
     },
     "two_word_actions": {
         "открой браузер": {
-            "command": "Apps.Browser.open(num)",
+            "command": "Apps.Browser.open()",
             "num": false
 
         },
         "закрой браузер": {
-            "command": "Apps.Browser.close(num)",
+            "command": "Apps.Browser.close()",
             "num": false
         },
         "сверни окна": {
-            "command": "Desktop.clear(num)",
+            "command": "Desktop.clear()",
             "num": false
         },
-        "открой powerpoint": {
-            "command": "Apps.powerpoint.open(num)",
-            "num": false
-        },
-        "закрой powerpoint": {
-            "command": "Apps.powerpoint.close(num)",
+        "найди ярлыки": {
+            "command": "Apps.Search_File.get_desktop_shortcuts()",
             "num": false
         }
     }

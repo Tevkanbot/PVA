@@ -7,16 +7,6 @@ class Data:
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     
     @staticmethod
-    def load_apps():
-        # Путь к файлу triggers_and_commands.json
-        file_path = os.path.join(Data.script_dir, "backend", "jsons", "app_data.json")
-        
-        with open(file_path, "r", encoding="utf-8") as file:
-            data = json.load(file)
-        
-        return data
-    
-    @staticmethod
     def load_triggers():
         # Путь к файлу triggers_and_commands.json
         file_path = os.path.join(Data.script_dir, "backend", "jsons", "triggers_and_commands.json")
@@ -41,14 +31,14 @@ class Data:
     
     @staticmethod
     def load_app_data():
-        # Путь к файлу app_data.json
+
         file_path = os.path.join(Data.script_dir, "backend", "jsons", "app_data.json")
         
         with open(file_path, "r", encoding="utf-8") as file:
             data = json.load(file)
         
         return data
-
+    
     @staticmethod
     def dump_app_data(data):
         if not isinstance(data, dict):
@@ -62,3 +52,7 @@ class Data:
         
         return True
     
+    @staticmethod
+
+    def load_username():
+        pass

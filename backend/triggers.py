@@ -4,15 +4,16 @@ from .commands import *
 
 class Trigger:
                 
-    def search_trigger(phrase):  # Ищем сначала активационное слово, затем триггеры во фразе
+    def search_trigger(phrase, end):  # Ищем сначала активационное слово, затем триггеры во фразе
         
-
+        probable_command = phrase
         start = False
         phrase = phrase.split()  # Разделяем фразу на слова
 
         for word in phrase:  # Ищем активационное слово, референс - фраза "Алиса"
             if word == "клей":
                 start = True
+                end.send({"command": "send_message_as_user", "data": probable_command})
                 break
 
         if start: # Если активатор найден, то ищем триггеры во фразе
@@ -33,38 +34,13 @@ class Trigger:
 
                     if  trigger_words.issubset(phrase) != False:
                         print("триггер найден")
-                        return {"WordCount": trig,"trigger":potential_trigger,"num":num}
-                    
-                    else:
-                        print("триггер не найден")
-                        
+                        return {"WordCount": trig,"trigger": potential_trigger, "num":num}
+
+            return {"WordCount": 0}            
 
         else:
             # Если активационное слово не найдено
             return {"WordCount": 0}
-
-    def find_apps(phrase):
-        phrase = phrase.split()
-
-        data = Data.load_apps()
-        data = data["app"]
-
-        for trigger_words in data:
-
-            potential_trigger = trigger_words
-            value = data.get(potential_trigger)
-            trigger_words =  trigger_words.split()
-            trigger_words = set(trigger_words)
-            
-            if  trigger_words.issubset(phrase) != False:
-                os.startfile(value)
-                
-                return("триггер найден")
-                
-            else:
-                print("") 
-            
-
 
     def search_number(fromSearch, phrase):
 
@@ -93,7 +69,7 @@ class Trigger:
 
 
 
-    def start(fromReturn):
+    def start(fromReturn, phrase):
 
         data = Data.load_triggers()
 
@@ -103,19 +79,18 @@ class Trigger:
         if fromReturn["WordCount"] == "four":
             exec(data["four_word_actions"][trigWord]["command"])
 
-            return("Запущено:", trigWord, ">>>", data["four_word_actions"][trigWord]["command"])
+            return str("Запущено: ", trigWord, data["four_word_actions"][trigWord]["command"])
 
         if fromReturn["WordCount"] == "three":
             exec(data["three_word_actions"][trigWord]["command"])
 
-            return("Запущено:", trigWord, ">>>", data["three_word_actions"][trigWord]["command"])
+            return str("Запущено: ", trigWord, data["three_word_actions"][trigWord]["command"])
         
         if fromReturn["WordCount"] == "two":
             exec(data["two_word_actions"][trigWord]["command"])
 
-            return("Запущено:", trigWord, ">>>", data["two_word_actions"][trigWord]["command"])
+            return trigWord #data["two_word_actions"][trigWord]["command"]
 
         if fromReturn["WordCount"] == "one":
-            exec(data["one_word_actions"][trigWord]["command"])
 
-            return("Запущено:", trigWord, ">>>", data["one_word_actions"][trigWord]["command"])
+            return data["one_word_actions"][trigWord]["command"]
