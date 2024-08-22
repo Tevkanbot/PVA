@@ -1,11 +1,19 @@
-# First, run this to create venv
-python -m venv .venv
+# Installation 
+tested on python 3.10.11
 
-# Than run this to enter venv
-.venv\Scripts\activate
+1. python -m venv .venv
 
-# Then upgrade pip
-python.exe -m pip install --upgrade pip
+1.1 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+ 
+2. .venv\Scripts\activate
 
-# Run this to finally install requirements
-python -m pip install -r requirements.txt
+3. python.exe -m pip install --upgrade pip
+
+4. python -m pip install -r requirements.txt
+
+
+
+# Functions
+1. Открытие ярлыков с рабочего стола
+2. Браузер
+3. Громкость

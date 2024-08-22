@@ -1,11 +1,15 @@
 from backend.voise import Voice
 from backend.triggers import Trigger as tr
+from backend.commands import Apps
 import time
+
 
 def main(end):
 
     vo = Voice()
     mic_status = False
+    Apps.Search_File.get_desktop_shortcuts()
+    print("Успешный запуск, ярлыки получены")
 
     while True:
         # Сначала проверяем новые команды, если есть то выполняем
@@ -16,6 +20,7 @@ def main(end):
                 mic_status = recived_data["data"]
                 print("mic_status: ", mic_status)
                 if mic_status:
+
                     end.send({"command": "send_message", "data": "Калибровка микрофона, обеспечьте тишину"})
                     time.sleep(1)
                     vo.calibrate_recognizer()
@@ -31,13 +36,12 @@ def main(end):
         if phrase is None:
             continue
 
-        end.send({"command": "send_message", "data": phrase})
-
-        searched = tr.search_trigger(phrase)
+        searched = tr.search_trigger(phrase, end)
         res = tr.search_number(searched, phrase)
 
-        print("res: ", res)
+        #print("res: ", res)
 
         if res["WordCount"] != 0:
-            start_data = tr.start(res)
-            end.send({"command": "send_message", "data": start_data})
+            start_data = tr.start(res, phrase)
+            message = str(f"Запущена команда: '{start_data}'")
+            end.send({"command": "send_message", "data": message})

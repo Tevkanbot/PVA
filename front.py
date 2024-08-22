@@ -87,7 +87,9 @@ def enableMicrophone(state):
 
 @eel.expose
 def toggleSwitch(isHidden):#Согласие с лицензией
-        print("Согласие с лицензией")
+        data = Data.load_app_data()
+        data["is"] = "yes"
+        Data.dump_app_data(data)
 
 @eel.expose #Вытягивание имени пользователя (первая буква)
 def get_initials_from_json():
@@ -97,8 +99,9 @@ def get_initials_from_json():
 
 @eel.expose
 def send_Message_Input(message): #Отправка сообщение через строку ввода
-    eel.display_message_as_user(message)
-    print(message)
+    #eel.display_message_as_user(message)
+    #print(message)
+    pass
 
 @eel.expose
 def send_message_to_chat(message):
@@ -118,6 +121,9 @@ def wait_for_commands():
 
         if recived_data["command"] == "send_message":
             eel.display_message_in_chat(recived_data["data"])
+
+        elif recived_data["command"] == "send_message_as_user":
+            eel.display_message_as_user(recived_data["data"])
 
 if __name__ == "__main__":
     app_process = multiprocessing.Process(target=Front.start_app)
