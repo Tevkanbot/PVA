@@ -129,7 +129,8 @@ function display_message_in_chat(message) {//Вывод сообщения PVA
     scrollToBottom(); // Автоматически прокручиваем до конца
 }
 eel.expose(display_message_in_chat); // Экспонируем функцию для использования с Eel
-function display_message_user(message) { // Вывод сообщения пользователя
+
+function display_message_as_user(message) { // Вывод сообщения пользователя
     const messageBox = document.getElementById('message-box');
     if (!messageBox) {
         console.error("Message box not found.");
@@ -152,7 +153,7 @@ function display_message_user(message) { // Вывод сообщения пол
 
     scrollToBottom();
 }
-eel.expose(display_message_user); // Экспонируем функцию для использования с Eel
+eel.expose(display_message_as_user); // Экспонируем функцию для использования с Eel
 
 function scrollToBottom() {
     const chatWindow = document.getElementById('chat-window');

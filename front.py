@@ -97,7 +97,7 @@ def get_initials_from_json():
 
 @eel.expose
 def send_Message_Input(message): #Отправка сообщение через строку ввода
-    eel.display_message_user(message)
+    eel.display_message_as_user(message)
     print(message)
 
 @eel.expose
