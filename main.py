@@ -1,13 +1,11 @@
 from backend.voise import Voice
 from backend.triggers import Trigger as tr
-#from multiprocessing import Pipe
+import time
 
 def main(end):
 
     vo = Voice()
-    mic_status = True
-    vo.calibrate_recognizer()
-    
+    mic_status = False
 
     while True:
         # Сначала проверяем новые команды, если есть то выполняем
@@ -17,6 +15,11 @@ def main(end):
             if recived_data["command"] == "change_mic_status":
                 mic_status = recived_data["data"]
                 print("mic_status: ", mic_status)
+                if mic_status:
+                    end.send({"command": "send_message", "data": "Калибровка микрофона, обеспечьте тишину"})
+                    time.sleep(1)
+                    vo.calibrate_recognizer()
+                    end.send({"command": "send_message", "data": "Калибровка микрофона завершена"})
 
 
 
