@@ -2,4 +2,4 @@
 __pycache__
 classes/__pycache__
 tests.py
-.env
+backend/jsons/app_data.json
