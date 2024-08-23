@@ -79,18 +79,19 @@ class Trigger:
         if fromReturn["WordCount"] == "four":
             exec(data["four_word_actions"][trigWord]["command"])
 
-            return str("Запущено: ", trigWord, data["four_word_actions"][trigWord]["command"])
+            return trigWord
 
         if fromReturn["WordCount"] == "three":
             exec(data["three_word_actions"][trigWord]["command"])
 
-            return str("Запущено: ", trigWord, data["three_word_actions"][trigWord]["command"])
+            return trigWord
         
         if fromReturn["WordCount"] == "two":
             exec(data["two_word_actions"][trigWord]["command"])
-
+            
             return trigWord #data["two_word_actions"][trigWord]["command"]
 
         if fromReturn["WordCount"] == "one":
+            exec(data["one_word_actions"][trigWord]["command"])
 
-            return data["one_word_actions"][trigWord]["command"]
+            return trigWord
