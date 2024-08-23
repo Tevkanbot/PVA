@@ -17,11 +17,11 @@ class Trigger:
                 break
 
         if start: # Если активатор найден, то ищем триггеры во фразе
-            print("клей найден")
+            #print("клей найден")
             data = Data.load_triggers() # Загружаем данные, в особенности триггерные слова
             num = 0
             for trig in ["four","three","two","one"]:
-                print(trig)
+                #print(trig)
                 n_word_triggers = data[f"{trig}_word_triggers"]
                 
         
@@ -33,7 +33,7 @@ class Trigger:
                     trigger_words = set(trigger_words)
 
                     if  trigger_words.issubset(phrase) != False:
-                        print("триггер найден")
+                        #print("триггер найден")
                         return {"WordCount": trig,"trigger": potential_trigger, "num":num}
 
             return {"WordCount": 0}            
@@ -79,18 +79,19 @@ class Trigger:
         if fromReturn["WordCount"] == "four":
             exec(data["four_word_actions"][trigWord]["command"])
 
-            return str("Запущено: ", trigWord, data["four_word_actions"][trigWord]["command"])
+            return trigWord
 
         if fromReturn["WordCount"] == "three":
             exec(data["three_word_actions"][trigWord]["command"])
 
-            return str("Запущено: ", trigWord, data["three_word_actions"][trigWord]["command"])
+            return trigWord
         
         if fromReturn["WordCount"] == "two":
             exec(data["two_word_actions"][trigWord]["command"])
-
+            
             return trigWord #data["two_word_actions"][trigWord]["command"]
 
         if fromReturn["WordCount"] == "one":
+            exec(data["one_word_actions"][trigWord]["command"])
 
-            return data["one_word_actions"][trigWord]["command"]
+            return trigWord

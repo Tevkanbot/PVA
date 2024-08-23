@@ -3,7 +3,6 @@ from pathlib import Path
 from backend.data import Data
 import multiprocessing 
 from main import main as start_backend
-import json
 
 
 
@@ -18,7 +17,7 @@ class Front:
     @staticmethod
     def is_user_registered():
         data = Data.load_app_data()
-        return data.get("name") != "None"
+        return data["name"] != "None"
     
     @staticmethod
     def save_user(name):
@@ -37,15 +36,6 @@ class Front:
         data = Data.load_app_data()
         data["websites"][input_value_1] = input_value_2.lower()
         Data.dump_app_data(data)
-
-    @staticmethod
-    def load_data():
-        with open('backend/jsons/app_data.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-
-    @staticmethod
-    def get_initials(name):
-        return name[:1]  # Извлекаем первые две буквы
 
     @staticmethod
     def start_app():
@@ -88,28 +78,23 @@ def enableMicrophone(state):
 @eel.expose
 def toggleSwitch(isHidden):#Согласие с лицензией
         data = Data.load_app_data()
-        data["is"] = "yes"
+        data["Agree with license"] = "yes"
         Data.dump_app_data(data)
 
 @eel.expose #Вытягивание имени пользователя (первая буква)
 def get_initials_from_json():
-    data = Front.load_data()  # Используем статический метод через имя класса
-    name = data.get('name', '')
-    return Front.get_initials(name)  # Используем статический метод через имя класса
+    data = Data.load_app_data()
+    name = data["name"]
+    return name[:1]
 
 @eel.expose
 def send_Message_Input(message): #Отправка сообщение через строку ввода
-    #eel.display_message_as_user(message)
-    #print(message)
-    pass
-
-@eel.expose
-def send_message_to_chat(message):
-    eel.display_message_in_chat(message)  # Это вызывает JavaScript функцию
+    end2.send({"command": "text_command", "data": message})
+    print(message)
 
 @eel.expose
 def on_load(): # Функция вызывается из JavaScript при запуске страницы
-    eel.display_message_in_chat("Добро пожаловать! Я PVA - Клей")
+    eel.display_message_in_chat("Добро пожаловать! Я ваш Персональный Голосовой Ассистент - Клей")
     
     process_2 = multiprocessing.Process(target=start_backend, kwargs={"end": end1}, daemon=True)
     process_2.start()

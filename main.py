@@ -12,6 +12,7 @@ def main(end):
     print("Успешный запуск, ярлыки получены")
 
     while True:
+        phrase = None
         # Сначала проверяем новые команды, если есть то выполняем
         if end.poll():
             recived_data = end.recv()# Получаем словарь {"command": "какая-то команда", "data": "информация к этой команде"}
@@ -25,14 +26,21 @@ def main(end):
                     time.sleep(1)
                     vo.calibrate_recognizer()
                     end.send({"command": "send_message", "data": "Калибровка микрофона завершена"})
-
+            elif recived_data["command"] == "text_command":
+                phrase = recived_data["data"].lower()
+                print("phrase: ", phrase)
 
 
         # Потом выполняем рекогнайз и команду при необходимости
-        if mic_status:
+        if mic_status and phrase is None:
             phrase = vo.get_phrase()
+
+        elif phrase is not None:
+            pass
+
         else:
             continue
+
         if phrase is None:
             continue
 
