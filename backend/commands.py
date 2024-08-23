@@ -10,7 +10,7 @@ import webbrowser
 
 class Audio:  # Работа со звуком
 
-    pyautogui.FAILSAFE = True
+    #pyautogui.FAILSAFE = True
     
 
     def volume(level):

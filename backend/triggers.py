@@ -17,11 +17,11 @@ class Trigger:
                 break
 
         if start: # Если активатор найден, то ищем триггеры во фразе
-            print("клей найден")
+            #print("клей найден")
             data = Data.load_triggers() # Загружаем данные, в особенности триггерные слова
             num = 0
             for trig in ["four","three","two","one"]:
-                print(trig)
+                #print(trig)
                 n_word_triggers = data[f"{trig}_word_triggers"]
                 
         
@@ -33,7 +33,7 @@ class Trigger:
                     trigger_words = set(trigger_words)
 
                     if  trigger_words.issubset(phrase) != False:
-                        print("триггер найден")
+                        #print("триггер найден")
                         return {"WordCount": trig,"trigger": potential_trigger, "num":num}
 
             return {"WordCount": 0}            
