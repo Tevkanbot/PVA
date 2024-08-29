@@ -3,7 +3,6 @@ import time
 import os
 from .sound import Sound
 import json
-import winreg # Для работы с реестром Windows
 from .data import Data
 import webbrowser
 

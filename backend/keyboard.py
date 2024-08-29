@@ -1,10 +1,3 @@
-"""
-C struct definitions credit
-
-Author: LucasG (https://github.com/lucasg)
-Source: http://stackoverflow.com/questions/13564851/generate-keyboard-events
-"""
-
 import time
 import ctypes
 
@@ -54,16 +47,6 @@ class Input(ctypes.Structure):
     ]
 
 class Keyboard:
-    """
-    Class Keyboard
-    :author: Paradoxis <luke@paradoxis.nl>
-    :description:
-
-    Keyboard methods to trigger fake key events
-    """
-
-    # Keyboard key constants
-    # More information: https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
     VK_BACKSPACE = 0x08
     VK_ENTER = 0x0D
     VK_CTRL = 0x11
@@ -243,11 +226,7 @@ class Keyboard:
     VK_OEM_CLEAR = 0xFE
 
     def keyDown(keyCode):
-        """
-        Key down wrapper
-        :param keyCode: int
-        :return: void
-        """
+
         extra = ctypes.c_ulong(0)
         ii_ = Input_I()
         ii_.ki = KeyBdInput(keyCode, 0x48, 0, 0, ctypes.pointer(extra) )
@@ -255,11 +234,6 @@ class Keyboard:
         SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
     def keyUp(keyCode):
-        """
-        Key up wrapper
-        :param keyCode: int
-        :return: void
-        """
         extra = ctypes.c_ulong(0)
         ii_ = Input_I()
         ii_.ki = KeyBdInput(keyCode, 0x48, 0x0002, 0, ctypes.pointer(extra) )
@@ -267,12 +241,7 @@ class Keyboard:
         SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
     def key(keyCode, length = 0):
-        """
-        Type a key
-        :param keyCode: int
-        :param length: int
-        :return:
-        """
+
         Keyboard.keyDown(keyCode)
         time.sleep(length)
         Keyboard.keyUp(keyCode)
