@@ -1,4 +1,4 @@
-from backend.voise import Voice
+from backend.voise import Voise
 from backend.triggers import Trigger as tr
 from backend.commands import Apps
 import time
@@ -6,7 +6,7 @@ import time
 
 def main(end):
 
-    vo = Voice()
+    vo = Voise()
     mic_status = False
     Apps.Search_File.get_desktop_shortcuts()
     print("Успешный запуск, ярлыки получены")
