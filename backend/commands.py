@@ -56,12 +56,26 @@ class Apps:
                 word = keys[i]
                 low = word.lower()
                 rep = low.replace('.','')
-                rep = rep.replace('_',' ')
+                rep = rep.replace('cm fo42lnktz9vvrzo4 moquqon0gtzwytkd9viqwwzr4qemwspgj4q@g7oimasfyv94qort k15a862438af798f9 ','')
+                rep = rep.replace('_','')
                 rep = rep.replace('-','')
                 rep = rep.replace('exe','')
                 rep = rep.replace('(','')
                 rep = rep.replace(')','')
-                rep = rep.replace(' cm fo42lnktz9vvrzo4 moquqon0gtzwytkd9viqwwzr4qemwspgj4q@g7oimasfyv94qort k15a862438af798f9 ','')
+                rep = rep.replace('1','')
+                rep = rep.replace('2','')
+                rep = rep.replace('3','')
+                rep = rep.replace('4','')
+                rep = rep.replace('5','')
+                rep = rep.replace('6','')
+                rep = rep.replace('7','')
+                rep = rep.replace('8','')
+                rep = rep.replace('9','')
+                rep = rep.replace('0','')
+                
+                if rep[-1]== " ":
+                    rep = rep[:-1]
+                
                 keys[i] = rep
                 
                 i=i+1
