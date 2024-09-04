@@ -142,6 +142,7 @@ class System:
         os.system("shutdown /s /t 1")
 
     def reboot():
+        return None
         os.system("reboot")
 
 
