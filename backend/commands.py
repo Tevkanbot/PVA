@@ -122,6 +122,14 @@ class Desktop:  # работа с окнами
     def clear():
         pyautogui.hotkey('win','m')
 
+class System:
+
+    def shutdown():
+        os.system("shutdown /s /t 1")
+
+    def reboot():
+        os.system("reboot")
+
 
 if __name__ == "__main__":
     
